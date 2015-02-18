@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ipwhois.utils &mdash; ipwhois 0.10.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.2.0/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.10.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="ipwhois 0.10.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          ipwhois</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.10.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">ipwhois <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#usage-examples">Usage Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#dependencies">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#installing">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#parsing">Parsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#rest-http">REST (HTTP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#country-codes">Country Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#ip-reputation">IP Reputation?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#domains">Domains?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#special-thanks">Special Thanks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">License</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGES.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id1">0.10.1 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id2">0.10.0 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id3">0.9.1 (2014-10-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id4">0.9.0 (2014-07-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id5">0.8.2 (2014-05-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id6">0.8.1 (2014-03-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id7">0.8.0 (2014-02-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id8">0.7.0 (2014-01-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id9">0.6.0 (2014-01-13)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGES.old.html">Changelog (Archive)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id1">0.5.2 (2013-12-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id2">0.5.1 (2013-12-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id3">0.5.0 (2013-11-20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id4">0.4.0 (2013-10-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id5">0.3.0 (2013-09-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id6">0.2.1 (2013-09-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id7">0.2.0 (2013-09-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id8">0.1.9 (2013-09-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id9">0.1.8 (2013-09-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id10">0.1.7 (2013-09-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id11">0.1.6 (2013-09-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id12">0.1.5 (2013-09-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id13">0.1.4 (2013-09-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id14">0.1.3 (2013-09-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id15">0.1.2 (2013-09-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id16">0.1.1 (2013-09-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id17">0.1.0 (2013-09-06)</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for ipwhois.utils</h1><div class="highlight"><pre>
+<span class="c"># Copyright (c) 2013, 2014, 2015 Philip Hane</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c"># modification, are permitted provided that the following conditions are met:</span>
+<span class="c">#</span>
+<span class="c"># 1. Redistributions of source code must retain the above copyright notice,</span>
+<span class="c">#    this list of conditions and the following disclaimer.</span>
+<span class="c"># 2. Redistributions in binary form must reproduce the above copyright notice,</span>
+<span class="c">#    this list of conditions and the following disclaimer in the documentation</span>
+<span class="c">#    and/or other materials provided with the distribution.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span>
+<span class="c"># AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<span class="c"># IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span>
+<span class="c"># ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</span>
+<span class="c"># LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span>
+<span class="c"># CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span>
+<span class="c"># SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span>
+<span class="c"># INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span>
+<span class="c"># CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span>
+<span class="c"># ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span>
+<span class="c"># POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">ipaddress</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ip_address</span><span class="p">,</span>
+                           <span class="n">ip_network</span><span class="p">,</span>
+                           <span class="n">IPv4Address</span><span class="p">,</span>
+                           <span class="n">IPv4Network</span><span class="p">,</span>
+                           <span class="n">IPv6Address</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">ipaddr</span> <span class="kn">import</span> <span class="p">(</span><span class="n">IPAddress</span> <span class="k">as</span> <span class="n">ip_address</span><span class="p">,</span>
+                        <span class="n">IPNetwork</span> <span class="k">as</span> <span class="n">ip_network</span><span class="p">,</span>
+                        <span class="n">IPv4Address</span><span class="p">,</span>
+                        <span class="n">IPv4Network</span><span class="p">,</span>
+                        <span class="n">IPv6Address</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">xml.dom.minidom</span> <span class="kn">import</span> <span class="n">parseString</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">filterfalse</span>
+
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">ifilterfalse</span> <span class="k">as</span> <span class="n">filterfalse</span>
+
+<span class="n">IP_REGEX</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">r&#39;(?P&lt;ip&gt;&#39;</span>
+    <span class="c">#IPv4</span>
+    <span class="s">&#39;(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.)){3}&#39;</span>
+    <span class="s">&#39;(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)&#39;</span>
+    <span class="c">#IPv6</span>
+    <span class="s">&#39;|\[?(((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:)&#39;</span>
+    <span class="s">&#39;{6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|&#39;</span>
+    <span class="s">&#39;2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]&#39;</span>
+    <span class="s">&#39;{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d&#39;</span>
+    <span class="s">&#39;\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|&#39;</span>
+    <span class="s">&#39;((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|&#39;</span>
+    <span class="s">&#39;2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]&#39;</span>
+    <span class="s">&#39;{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)&#39;</span>
+    <span class="s">&#39;(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}((&#39;</span>
+    <span class="s">&#39;(:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1&#39;</span>
+    <span class="s">&#39;\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|((&#39;</span>
+    <span class="s">&#39;[0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4})&#39;</span>
+    <span class="s">&#39;{0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]&#39;</span>
+    <span class="s">&#39;?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((&#39;</span>
+    <span class="s">&#39;25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})&#39;</span>
+    <span class="s">&#39;)|:)))(%.+)?))\]?&#39;</span>
+    <span class="c">#Optional IPv4 Port</span>
+    <span class="s">&#39;((:(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3}&#39;</span>
+    <span class="c">#Optional CIDR block</span>
+    <span class="s">&#39;))|(\/(?:[012]\d?|3[012]?|[4-9])))?&#39;</span>
+    <span class="s">&#39;)&#39;</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_countries"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.utils.get_countries">[docs]</a><span class="k">def</span> <span class="nf">get_countries</span><span class="p">(</span><span class="n">is_legacy_xml</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function to generate a dictionary containing ISO_3166-1 country codes</span>
+<span class="sd">    to names.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        is_legacy_xml: Boolean for whether to use the older country code</span>
+<span class="sd">            list (iso_3166-1_list_en.xml).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Dictionary: A dictionary with the country codes as the keys and the</span>
+<span class="sd">            country names as the values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c">#Initialize the countries dictionary.</span>
+    <span class="n">countries</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c">#Set the data directory based on if the script is a frozen executable.</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s">&#39;win32&#39;</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s">&#39;frozen&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">):</span>
+
+        <span class="n">data_dir</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">data_dir</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">is_legacy_xml</span><span class="p">:</span>
+
+        <span class="c">#Create the country codes file object.</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/data/iso_3166-1_list_en.xml&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span>
+                    <span class="n">encoding</span><span class="o">=</span><span class="s">&#39;ISO-8859-1&#39;</span><span class="p">)</span>
+
+        <span class="c">#Read the file.</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="c">#Check if there is data.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+
+            <span class="k">return</span> <span class="p">{}</span>
+
+        <span class="c">#Parse the data to get the DOM.</span>
+        <span class="n">dom</span> <span class="o">=</span> <span class="n">parseString</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="c">#Retrieve the country entries.</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s">&#39;ISO_3166-1_Entry&#39;</span><span class="p">)</span>
+
+        <span class="c">#Iterate through the entries and add to the countries dictionary.</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
+
+            <span class="c">#Retrieve the country code and name from the DOM.</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span>
+                <span class="s">&#39;ISO_3166-1_Alpha-2_Code_element&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span>
+                <span class="s">&#39;ISO_3166-1_Country_name&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span>
+
+            <span class="c">#Add to the countries dictionary.</span>
+            <span class="n">countries</span><span class="p">[</span><span class="n">code</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c">#Create the country codes file object.</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/data/iso_3166-1.csv&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span>
+                    <span class="n">encoding</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+
+        <span class="c">#Create csv reader object.</span>
+        <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s">&#39;&quot;&#39;</span><span class="p">)</span>
+
+        <span class="c">#Iterate through the rows and add to the countries dictionary.</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
+
+            <span class="c">#Retrieve the country code and name columns.</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="c">#Add to the countries dictionary.</span>
+            <span class="n">countries</span><span class="p">[</span><span class="n">code</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">return</span> <span class="n">countries</span>
+
+</div>
+<div class="viewcode-block" id="ipv4_is_defined"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.utils.ipv4_is_defined">[docs]</a><span class="k">def</span> <span class="nf">ipv4_is_defined</span><span class="p">(</span><span class="n">address</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function for checking if an IPv4 address is defined (does not need to</span>
+<span class="sd">    be resolved).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        address: An IPv4 address in string format.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple:</span>
+
+<span class="sd">        :Boolean: True if given address is defined, otherwise False</span>
+<span class="sd">        :String: IETF assignment name if given address is defined, otherwise &#39;&#39;</span>
+<span class="sd">        :String: IETF assignment RFC if given address is defined, otherwise &#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c">#Initialize the IP address object.</span>
+    <span class="n">query_ip</span> <span class="o">=</span> <span class="n">IPv4Address</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">address</span><span class="p">))</span>
+
+    <span class="c">#This Network</span>
+    <span class="k">if</span> <span class="n">query_ip</span> <span class="ow">in</span> <span class="n">IPv4Network</span><span class="p">(</span><span class="s">&#39;0.0.0.0/8&#39;</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;This Network&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 1122, Section 3.2.1.3&#39;</span>
+
+    <span class="c">#Private-Use Networks</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_private</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Private-Use Networks&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 1918&#39;</span>
+
+    <span class="c">#Loopback</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_loopback</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Loopback&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 1122, Section 3.2.1.3&#39;</span>
+
+    <span class="c">#Link Local</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_link_local</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Link Local&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 3927&#39;</span>
+
+    <span class="c">#IETF Protocol Assignments</span>
+    <span class="k">elif</span> <span class="n">query_ip</span> <span class="ow">in</span> <span class="n">IPv4Network</span><span class="p">(</span><span class="s">&#39;192.0.0.0/24&#39;</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;IETF Protocol Assignments&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 5736&#39;</span>
+
+    <span class="c">#TEST-NET-1</span>
+    <span class="k">elif</span> <span class="n">query_ip</span> <span class="ow">in</span> <span class="n">IPv4Network</span><span class="p">(</span><span class="s">&#39;192.0.2.0/24&#39;</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;TEST-NET-1&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 5737&#39;</span>
+
+    <span class="c">#6to4 Relay Anycast</span>
+    <span class="k">elif</span> <span class="n">query_ip</span> <span class="ow">in</span> <span class="n">IPv4Network</span><span class="p">(</span><span class="s">&#39;192.88.99.0/24&#39;</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;6to4 Relay Anycast&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 3068&#39;</span>
+
+    <span class="c">#Network Interconnect Device Benchmark Testing</span>
+    <span class="k">elif</span> <span class="n">query_ip</span> <span class="ow">in</span> <span class="n">IPv4Network</span><span class="p">(</span><span class="s">&#39;198.18.0.0/15&#39;</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span>
+                <span class="s">&#39;Network Interconnect Device Benchmark Testing&#39;</span><span class="p">,</span>
+                <span class="s">&#39;RFC 2544&#39;</span><span class="p">)</span>
+
+    <span class="c">#TEST-NET-2</span>
+    <span class="k">elif</span> <span class="n">query_ip</span> <span class="ow">in</span> <span class="n">IPv4Network</span><span class="p">(</span><span class="s">&#39;198.51.100.0/24&#39;</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;TEST-NET-2&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 5737&#39;</span>
+
+    <span class="c">#TEST-NET-3</span>
+    <span class="k">elif</span> <span class="n">query_ip</span> <span class="ow">in</span> <span class="n">IPv4Network</span><span class="p">(</span><span class="s">&#39;203.0.113.0/24&#39;</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;TEST-NET-3&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 5737&#39;</span>
+
+    <span class="c">#Multicast</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_multicast</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Multicast&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 3171&#39;</span>
+
+    <span class="c">#Limited Broadcast</span>
+    <span class="k">elif</span> <span class="n">query_ip</span> <span class="ow">in</span> <span class="n">IPv4Network</span><span class="p">(</span><span class="s">&#39;255.255.255.255/32&#39;</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Limited Broadcast&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 919, Section 7&#39;</span>
+
+    <span class="k">return</span> <span class="bp">False</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span>
+
+</div>
+<div class="viewcode-block" id="ipv6_is_defined"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.utils.ipv6_is_defined">[docs]</a><span class="k">def</span> <span class="nf">ipv6_is_defined</span><span class="p">(</span><span class="n">address</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function for checking if an IPv6 address is defined (does not need to</span>
+<span class="sd">    be resolved).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        address: An IPv6 address in string format.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple:</span>
+
+<span class="sd">        :Boolean: True if address is defined, otherwise False</span>
+<span class="sd">        :String: IETF assignment name if address is defined, otherwise &#39;&#39;</span>
+<span class="sd">        :String: IETF assignment RFC if address is defined, otherwise &#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c">#Initialize the IP address object.</span>
+    <span class="n">query_ip</span> <span class="o">=</span> <span class="n">IPv6Address</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">address</span><span class="p">))</span>
+
+    <span class="c">#Multicast</span>
+    <span class="k">if</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_multicast</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Multicast&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 4291, Section 2.7&#39;</span>
+
+    <span class="c">#Reserved</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_reserved</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Reserved&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 4291&#39;</span>
+
+    <span class="c">#Unspecified</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_unspecified</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Unspecified&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 4291, Section 2.5.2&#39;</span>
+
+    <span class="c">#Loopback.</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_loopback</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Loopback&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 4291, Section 2.5.3&#39;</span>
+
+    <span class="c">#Link-Local</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_link_local</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Link-Local&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 4291, Section 2.5.6&#39;</span>
+
+    <span class="c">#Site-Local</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_site_local</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Site-Local&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 4291, Section 2.5.7&#39;</span>
+
+    <span class="c">#Unique Local Unicast</span>
+    <span class="k">elif</span> <span class="n">query_ip</span><span class="o">.</span><span class="n">is_private</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="s">&#39;Unique Local Unicast&#39;</span><span class="p">,</span> <span class="s">&#39;RFC 4193&#39;</span>
+
+    <span class="k">return</span> <span class="bp">False</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span>
+
+</div>
+<div class="viewcode-block" id="unique_everseen"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.utils.unique_everseen">[docs]</a><span class="k">def</span> <span class="nf">unique_everseen</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The generator to list unique elements, preserving the order. Remember all</span>
+<span class="sd">    elements ever seen. This was taken from the itertools recipes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        iterable: An iterable to process.</span>
+<span class="sd">        key: Optional function to run when checking elements (e.g., str.lower)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Generator: Yields a generator object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">seen_add</span> <span class="o">=</span> <span class="n">seen</span><span class="o">.</span><span class="n">add</span>
+
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">filterfalse</span><span class="p">(</span><span class="n">seen</span><span class="o">.</span><span class="n">__contains__</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
+
+            <span class="n">seen_add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">element</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+
+            <span class="n">k</span> <span class="o">=</span> <span class="n">key</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+
+                <span class="n">seen_add</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="n">element</span>
+
+</div>
+<div class="viewcode-block" id="unique_addresses"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.utils.unique_addresses">[docs]</a><span class="k">def</span> <span class="nf">unique_addresses</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function to search an input string and/or file, extracting and</span>
+<span class="sd">    counting IPv4/IPv6 addresses/networks. Summarizes ports with sub-counts.</span>
+<span class="sd">    If both a string and file_path are provided, it will process them both.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data: A string to process.</span>
+<span class="sd">        file_path: An optional file path to process.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Dictionary:</span>
+
+<span class="sd">        :ip address/network: Each address or network found is a dictionary</span>
+<span class="sd">            containing\:</span>
+
+<span class="sd">            :count: Total number of times seen (Integer)</span>
+<span class="sd">            :ports: Dictionary with port numbers as keys and the number of</span>
+<span class="sd">                times seen for this ip as values (Dictionary)</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Arguments provided are invalid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">file_path</span><span class="p">:</span>
+
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;No data or file path provided.&#39;</span><span class="p">)</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">&#39;count&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s">&#39;ports&#39;</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="p">}</span>
+
+    <span class="n">file_data</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">if</span> <span class="n">file_path</span><span class="p">:</span>
+
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+
+        <span class="c">#Read the file.</span>
+        <span class="n">file_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">IP_REGEX</span><span class="p">),</span>
+        <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span>
+    <span class="p">)</span>
+
+    <span class="c">#Check if there is data.</span>
+    <span class="k">for</span> <span class="n">input_data</span> <span class="ow">in</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">file_data</span><span class="p">]:</span>
+
+        <span class="k">if</span> <span class="n">input_data</span><span class="p">:</span>
+
+            <span class="c">#Search for IPs.</span>
+            <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">pattern</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
+
+                <span class="n">is_net</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">port</span> <span class="o">=</span> <span class="bp">None</span>
+                <span class="k">try</span><span class="p">:</span>
+
+                    <span class="n">found</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;ip&#39;</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="s">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">found</span> <span class="ow">and</span> <span class="s">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">found</span><span class="p">:</span>
+
+                        <span class="n">split</span> <span class="o">=</span> <span class="n">found</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">)</span>
+                        <span class="n">ip_or_net</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">port</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+                    <span class="k">elif</span> <span class="s">&#39;[&#39;</span> <span class="ow">in</span> <span class="n">found</span><span class="p">:</span>
+
+                        <span class="n">split</span> <span class="o">=</span> <span class="n">found</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;]:&#39;</span><span class="p">)</span>
+                        <span class="n">ip_or_net</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+                        <span class="n">port</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+                    <span class="k">elif</span> <span class="s">&#39;/&#39;</span> <span class="ow">in</span> <span class="n">found</span><span class="p">:</span>
+
+                        <span class="n">is_net</span> <span class="o">=</span> <span class="bp">True</span>
+                        <span class="n">ip_or_net</span> <span class="o">=</span> <span class="n">found</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+
+                        <span class="n">ip_or_net</span> <span class="o">=</span> <span class="n">found</span>
+
+                    <span class="k">if</span> <span class="n">is_net</span><span class="p">:</span>
+
+                        <span class="n">ip_obj</span> <span class="o">=</span> <span class="n">ip_network</span><span class="p">(</span><span class="n">ip_or_net</span><span class="p">)</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ip_obj</span> <span class="o">=</span> <span class="n">ip_address</span><span class="p">(</span><span class="n">ip_or_net</span><span class="p">)</span>
+
+                    <span class="n">obj_str</span> <span class="o">=</span> <span class="n">ip_obj</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span>
+
+                    <span class="k">if</span> <span class="n">obj_str</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ret</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+
+                        <span class="n">ret</span><span class="p">[</span><span class="n">obj_str</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+                    <span class="n">ret</span><span class="p">[</span><span class="n">obj_str</span><span class="p">][</span><span class="s">&#39;count&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                    <span class="k">if</span> <span class="n">port</span><span class="p">:</span>
+
+                        <span class="k">try</span><span class="p">:</span>
+
+                            <span class="n">ret</span><span class="p">[</span><span class="n">obj_str</span><span class="p">][</span><span class="s">&#39;ports&#39;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">port</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+
+                            <span class="n">ret</span><span class="p">[</span><span class="n">obj_str</span><span class="p">][</span><span class="s">&#39;ports&#39;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">port</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+
+                <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+
+                    <span class="k">continue</span>
+
+    <span class="k">return</span> <span class="n">ret</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Philip Hane.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3b2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
