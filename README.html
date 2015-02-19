@@ -76,6 +76,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#usage-examples">Usage Examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#typical-usage">Typical usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-a-proxy">Use a proxy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
@@ -153,6 +154,7 @@
 </li>
 <li><a class="reference internal" href="#usage-examples">Usage Examples</a><ul>
 <li><a class="reference internal" href="#typical-usage">Typical usage</a></li>
+<li><a class="reference internal" href="#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
 <li><a class="reference internal" href="#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
 <li><a class="reference internal" href="#use-a-proxy">Use a proxy</a></li>
 <li><a class="reference internal" href="#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
@@ -278,6 +280,67 @@ for IPv4 and IPv6 addresses.</p>
 <span class="go">&#39;raw&#39;: None,</span>
 <span class="go">&#39;raw_referral&#39;: None,</span>
 <span class="go">&#39;referral&#39;: None</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multiple-networks-listed-and-referral-whois">
+<h2>Multiple networks listed and referral whois<a class="headerlink" href="#multiple-networks-listed-and-referral-whois" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
+<span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
+
+<span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;38.113.198.252&#39;)</span>
+<span class="go">&gt;&gt;&gt;&gt; results = obj.lookup(get_referral=True)</span>
+<span class="go">&gt;&gt;&gt;&gt; pprint(results)</span>
+
+<span class="go">{</span>
+<span class="go">&#39;asn&#39;: &#39;174&#39;,</span>
+<span class="go">&#39;asn_cidr&#39;: &#39;38.0.0.0/8&#39;,</span>
+<span class="go">&#39;asn_country_code&#39;: &#39;US&#39;,</span>
+<span class="go">&#39;asn_date&#39;: &#39;&#39;,</span>
+<span class="go">&#39;asn_registry&#39;: &#39;arin&#39;,</span>
+<span class="go">&#39;nets&#39;: [{&#39;abuse_emails&#39;: &#39;abuse@cogentco.com&#39;,</span>
+<span class="go">          &#39;address&#39;: &#39;1015 31st St NW&#39;,</span>
+<span class="go">          &#39;cidr&#39;: &#39;38.0.0.0/8&#39;,</span>
+<span class="go">          &#39;city&#39;: &#39;Washington&#39;,</span>
+<span class="go">          &#39;country&#39;: &#39;US&#39;,</span>
+<span class="go">          &#39;created&#39;: &#39;1991-04-16T00:00:00&#39;,</span>
+<span class="go">          &#39;description&#39;: &#39;PSINet, Inc.&#39;,</span>
+<span class="go">          &#39;handle&#39;: &#39;NET-38-0-0-0-1&#39;,</span>
+<span class="go">          &#39;misc_emails&#39;: None,</span>
+<span class="go">          &#39;name&#39;: &#39;COGENT-A&#39;,</span>
+<span class="go">          &#39;postal_code&#39;: &#39;20007&#39;,</span>
+<span class="go">          &#39;range&#39;: &#39;38.0.0.0 - 38.255.255.255&#39;,</span>
+<span class="go">          &#39;state&#39;: &#39;DC&#39;,</span>
+<span class="go">          &#39;tech_emails&#39;: &#39;ipalloc@cogentco.com&#39;,</span>
+<span class="go">          &#39;updated&#39;: &#39;2011-05-20T00:00:00&#39;},</span>
+<span class="go">         {&#39;abuse_emails&#39;: &#39;abuse@cogentco.com&#39;,</span>
+<span class="go">          &#39;address&#39;: &#39;1015 31st St NW&#39;,</span>
+<span class="go">          &#39;cidr&#39;: &#39;38.112.0.0/13&#39;,</span>
+<span class="go">          &#39;city&#39;: &#39;Washington&#39;,</span>
+<span class="go">          &#39;country&#39;: &#39;US&#39;,</span>
+<span class="go">          &#39;created&#39;: &#39;2003-08-20T00:00:00&#39;,</span>
+<span class="go">          &#39;description&#39;: &#39;PSINet, Inc.&#39;,</span>
+<span class="go">          &#39;handle&#39;: &#39;NET-38-112-0-0-1&#39;,</span>
+<span class="go">          &#39;misc_emails&#39;: None,</span>
+<span class="go">          &#39;name&#39;: &#39;COGENT-NB-0002&#39;,</span>
+<span class="go">          &#39;postal_code&#39;: &#39;20007&#39;,</span>
+<span class="go">          &#39;range&#39;: None,</span>
+<span class="go">          &#39;state&#39;: &#39;DC&#39;,</span>
+<span class="go">          &#39;tech_emails&#39;: &#39;ipalloc@cogentco.com&#39;,</span>
+<span class="go">          &#39;updated&#39;: &#39;2004-03-11T00:00:00&#39;}],</span>
+<span class="go">&#39;query&#39;: &#39;38.113.198.252&#39;,</span>
+<span class="go">&#39;raw&#39;: None,</span>
+<span class="go">&#39;raw_referral&#39;: None,</span>
+<span class="go">&#39;referral&#39;: {&#39;address&#39;: &#39;1015 31st St NW&#39;,</span>
+<span class="go">             &#39;cidr&#39;: &#39;38.113.198.0/23&#39;,</span>
+<span class="go">             &#39;city&#39;: &#39;Washington&#39;,</span>
+<span class="go">             &#39;country&#39;: &#39;US&#39;,</span>
+<span class="go">             &#39;description&#39;: &#39;Cogent communications - IPENG&#39;,</span>
+<span class="go">             &#39;name&#39;: &#39;NET4-2671C60017&#39;,</span>
+<span class="go">             &#39;postal_code&#39;: &#39;20007&#39;,</span>
+<span class="go">             &#39;state&#39;: &#39;DC&#39;,</span>
+<span class="go">             &#39;updated&#39;: &#39;2007-09-18 22:02:09&#39;}</span>
 <span class="go">}</span>
 </pre></div>
 </div>
