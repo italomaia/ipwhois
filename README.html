@@ -68,14 +68,23 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#features">Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#usage-examples">Usage Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#usage-examples">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#typical-usage">Typical Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-a-proxy">Use a proxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#installing">Installing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#parsing">Parsing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#rest-http">REST (HTTP)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#country-codes">Country Codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#ip-reputation">IP Reputation?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#domains">Domains?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#ip-reputation-support">IP Reputation Support?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#domain-support">Domain Support?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#special-thanks">Special Thanks</a></li>
 </ul>
 <ul>
@@ -131,14 +140,23 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Description</a></li>
 <li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#usage-examples">Usage Examples</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#usage-examples">Usage Examples</a><ul>
+<li><a class="reference internal" href="#typical-usage">Typical Usage</a></li>
+<li><a class="reference internal" href="#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
+<li><a class="reference internal" href="#use-a-proxy">Use a proxy</a></li>
+<li><a class="reference internal" href="#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li><a class="reference internal" href="#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li><a class="reference internal" href="#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#installing">Installing</a></li>
 <li><a class="reference internal" href="#parsing">Parsing</a></li>
 <li><a class="reference internal" href="#rest-http">REST (HTTP)</a></li>
 <li><a class="reference internal" href="#country-codes">Country Codes</a></li>
-<li><a class="reference internal" href="#ip-reputation">IP Reputation?</a></li>
-<li><a class="reference internal" href="#domains">Domains?</a></li>
+<li><a class="reference internal" href="#ip-reputation-support">IP Reputation Support?</a></li>
+<li><a class="reference internal" href="#domain-support">Domain Support?</a></li>
 <li><a class="reference internal" href="#special-thanks">Special Thanks</a></li>
 </ul>
 </ul>
@@ -199,9 +217,14 @@ for IPv4 and IPv6 addresses.</p>
 <li>BSD license</li>
 </ul>
 </div>
+<div class="section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://secynic.github.io/ipwhois">http://secynic.github.io/ipwhois</a></p>
+</div>
 <div class="section" id="usage-examples">
 <h1>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h1>
-<p>Typical usage:</p>
+<div class="section" id="typical-usage">
+<h2>Typical Usage<a class="headerlink" href="#typical-usage" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
@@ -237,7 +260,9 @@ for IPv4 and IPv6 addresses.</p>
 <span class="go">}</span>
 </pre></div>
 </div>
-<p>REST (HTTP):</p>
+</div>
+<div class="section" id="whois-lookup-via-http-rest">
+<h2>Whois lookup via HTTP (REST)<a class="headerlink" href="#whois-lookup-via-http-rest" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
@@ -271,7 +296,9 @@ for IPv4 and IPv6 addresses.</p>
 <span class="go">}</span>
 </pre></div>
 </div>
-<p>Proxy:</p>
+</div>
+<div class="section" id="use-a-proxy">
+<h2>Use a proxy<a class="headerlink" href="#use-a-proxy" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from urllib import request</span>
 <span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; handler = request.ProxyHandler({&#39;http&#39;: &#39;http://192.168.0.1:80/&#39;})</span>
@@ -279,7 +306,9 @@ for IPv4 and IPv6 addresses.</p>
 <span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;74.125.225.229&#39;, proxy_opener = opener)</span>
 </pre></div>
 </div>
-<p>Hostname:</p>
+</div>
+<div class="section" id="retrieve-host-information-for-an-ip-address">
+<h2>Retrieve host information for an IP address<a class="headerlink" href="#retrieve-host-information-for-an-ip-address" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
@@ -290,7 +319,9 @@ for IPv4 and IPv6 addresses.</p>
 <span class="go">(&#39;dfw06s26-in-f5.1e100.net&#39;, [], [&#39;74.125.225.229&#39;])</span>
 </pre></div>
 </div>
-<p>Countries:</p>
+</div>
+<div class="section" id="retrieve-the-official-country-name-for-an-iso-3166-1-country-code">
+<h2>Retrieve the official country name for an ISO 3166-1 country code<a class="headerlink" href="#retrieve-the-official-country-name-for-an-iso-3166-1-country-code" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import get_countries</span>
 
@@ -302,7 +333,9 @@ for IPv4 and IPv6 addresses.</p>
 <span class="go">United States</span>
 </pre></div>
 </div>
-<p>Unique IP Addresses:</p>
+</div>
+<div class="section" id="parse-out-ip-addresses-and-ports-from-text-or-a-file">
+<h2>Parse out IP addresses and ports from text or a file<a class="headerlink" href="#parse-out-ip-addresses-and-ports-from-text-or-a-file" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import unique_addresses</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
@@ -321,6 +354,7 @@ for IPv4 and IPv6 addresses.</p>
 <span class="go"> &#39;74.125.0.0/16&#39;: {&#39;count&#39;: 1, &#39;ports&#39;: {}},</span>
 <span class="go"> &#39;74.125.225.229&#39;: {&#39;count&#39;: 2, &#39;ports&#39;: {&#39;80&#39;: 1}}}</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="dependencies">
@@ -364,7 +398,7 @@ recognize this and the returned result will have the values separated by &#8216;
 <p>IPWhois.lookup_rws() should be faster than IPWhois.lookup(), but may not be as
 reliable. AFRINIC does not have a Whois-RWS service yet. We have to rely on the
 Ripe RWS service, which does not contain all of the data we need. The LACNIC
-RWS service is supported, but is in beta v2. This may result in availability
+RWS service is supported, but is in beta. This may result in availability
 or performance issues.</p>
 </div>
 <div class="section" id="country-codes">
@@ -378,13 +412,13 @@ iso_3166-1.csv, which is now the default.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="ip-reputation">
-<h1>IP Reputation?<a class="headerlink" href="#ip-reputation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ip-reputation-support">
+<h1>IP Reputation Support?<a class="headerlink" href="#ip-reputation-support" title="Permalink to this headline">¶</a></h1>
 <p>This feature is under consideration. Take a look at TekDefense&#8217;s Automater for
 now: <a class="reference external" href="https://github.com/1aN0rmus/TekDefense-Automater">TekDefense-Automater</a></p>
 </div>
-<div class="section" id="domains">
-<h1>Domains?<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="domain-support">
+<h1>Domain Support?<a class="headerlink" href="#domain-support" title="Permalink to this headline">¶</a></h1>
 <p>There are no plans for domain whois support in this project. It is under
 consideration as a new library in the future.</p>
 <p>For now, consider using Sven Slootweg&#8217;s
@@ -393,9 +427,7 @@ domain support.</p>
 </div>
 <div class="section" id="special-thanks">
 <h1>Special Thanks<a class="headerlink" href="#special-thanks" title="Permalink to this headline">¶</a></h1>
-<p>Thank you JetBrains for the PyCharm open source support. It has contributed
-significantly, especially in the pkg/env management and code inspection
-domains.</p>
+<p>Thank you JetBrains for the PyCharm open source support.</p>
 </div>
 
 
