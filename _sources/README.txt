@@ -16,15 +16,28 @@ Features
 * Useful set of utilities
 * BSD license
 
-Documentation
-=============
+Links
+=====
 
-http://secynic.github.io/ipwhois
+Documentation
+-------------
+
+https://secynic.github.io/ipwhois
+
+Github
+------
+
+https://github.com/secynic/ipwhois
+
+Pypi
+----
+
+https://pypi.python.org/pypi/ipwhois
 
 Usage Examples
 ==============
 
-Typical Usage
+Typical usage
 -------------
 
 ::
