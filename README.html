@@ -481,10 +481,10 @@ recognize this and the returned result will have the values separated by &#8216;
 <div class="section" id="rest-http">
 <h1>REST (HTTP)<a class="headerlink" href="#rest-http" title="Permalink to this headline">¶</a></h1>
 <p>IPWhois.lookup_rws() should be faster than IPWhois.lookup(), but may not be as
-reliable. AFRINIC does not have a Whois-RWS service yet. We have to rely on the
-Ripe RWS service, which does not contain all of the data we need. The LACNIC
-RWS service is supported, but is in beta. This may result in availability
-or performance issues.</p>
+reliable. REST queries do not support referral whois lookups. AFRINIC does not
+have a Whois-RWS service yet; we have to rely on the Ripe RWS service, which
+does not contain all of the data we need. The LACNIC RWS service is supported,
+but is in beta. This may result in availability or performance issues.</p>
 </div>
 <div class="section" id="country-codes">
 <h1>Country Codes<a class="headerlink" href="#country-codes" title="Permalink to this headline">¶</a></h1>
