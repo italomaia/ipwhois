@@ -14,12 +14,12 @@ Project Info
 ============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   README
+   Readme <README>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    LICENSE
 
