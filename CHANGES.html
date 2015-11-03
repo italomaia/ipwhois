@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; ipwhois 0.10.2 documentation</title>
+  <title>Changelog &mdash; ipwhois 0.11.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="ipwhois 0.10.2 documentation" href="index.html"/>
+    <link rel="top" title="ipwhois 0.11.0 documentation" href="index.html"/>
         <link rel="next" title="Changelog (Archive)" href="CHANGES.old.html"/>
         <link rel="prev" title="License" href="LICENSE.html"/> 
 
@@ -76,24 +76,37 @@
 <li class="toctree-l2"><a class="reference internal" href="README.html#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#links">Links</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="README.html#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#examples">Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="README.html#github">Github</a></li>
 <li class="toctree-l3"><a class="reference internal" href="README.html#pypi">Pypi</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#usage-examples">Usage Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="README.html#typical-usage">Typical usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#use-a-proxy">Use a proxy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#rdap-http">RDAP (HTTP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#use-a-proxy">Use a proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#legacy-whois">Legacy Whois</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#id1">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#utilities">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#installing">Installing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#parsing">Parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#rest-http">REST (HTTP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id2">RDAP (HTTP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#upgrading-from-0-10-to-0-11">Upgrading from 0.10 to 0.11</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#legacy-whois-parsing">Legacy Whois Parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#country-codes">Country Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#ip-reputation-support">IP Reputation Support?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#domain-support">Domain Support?</a></li>
@@ -106,16 +119,18 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.10.2 (2015-05-19)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.10.1 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.10.0 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.9.1 (2014-10-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">0.9.0 (2014-07-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">0.8.2 (2014-05-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">0.8.1 (2014-03-05)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">0.8.0 (2014-02-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">0.7.0 (2014-01-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">0.6.0 (2014-01-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.11.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.10.3 (2015-08-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.10.2 (2015-05-19)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.10.1 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.10.0 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.9.1 (2014-10-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">0.9.0 (2014-07-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">0.8.2 (2014-05-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">0.8.1 (2014-03-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">0.8.0 (2014-02-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">0.7.0 (2014-01-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">0.6.0 (2014-01-13)</a></li>
 </ul>
 </li>
 </ul>
@@ -178,7 +193,32 @@
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>0.10.2 (2015-05-19)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>0.11.0 (2015-11-02)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Support for REST lookups replaced with RDAP.</li>
+<li>Split code for a more structured system (net, whois, rdap, exceptions).</li>
+<li>Tests match the data new structure.</li>
+<li>Split tests for online and offline testing.</li>
+<li>Performance enhancements for parsing.</li>
+<li>Added an optional bootstrap parameter for RDAP lookups, in order to replace
+ASN lookups or use both. Will default to False. Afrinic is currently not
+supported, so I would not use this for now. ARIN acknowledged my issue
+for this, and will be adding support back in for Afrinic bootstrap.</li>
+<li>Added field_list parameter (inclusion list) for WHOIS lookups.</li>
+<li>Added logging.</li>
+<li>Added examples directory.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>0.10.3 (2015-08-14)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed LACNIC lookup_rws() queries, since they switched to RDAP. This is
+temporary to get it working until the major library transition to RDAP and
+new parsed formatting is complete.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>0.10.2 (2015-05-19)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed APNIC parsing for updated field.</li>
 <li>Fixed datetime parsing and validation when Zulu (Z) is appended.</li>
@@ -188,14 +228,14 @@
 <li>Minor PEP 8 tweaks.</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>0.10.1 (2015-02-09)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>0.10.1 (2015-02-09)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed setup.py bug.</li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h2>0.10.0 (2015-02-09)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>0.10.0 (2015-02-09)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added .csv support for country code source. You can no longer download
 country code information from iso.org.</li>
@@ -205,8 +245,8 @@ country code information from iso.org.</li>
 <li>Fixed TestIPWhois.test_ip_invalid() assertions.</li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>0.9.1 (2014-10-14)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>0.9.1 (2014-10-14)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added ignore_referral_errors parameter to lookup().</li>
 <li>Fixed ipaddress import conflicts with alternate ipaddress module.</li>
@@ -215,8 +255,8 @@ country code information from iso.org.</li>
 <li>Fixed CIDR regex parsing bug where some nets were excluded from the results.</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h2>0.9.0 (2014-07-27)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>0.9.0 (2014-07-27)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed order on REST email fields</li>
 <li>Fixed setup error for initial install when dependencies don&#8217;t exist.</li>
@@ -229,22 +269,22 @@ country code information from iso.org.</li>
 <li>Added handle and range values to returned nets dictionary.</li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h2>0.8.2 (2014-05-12)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>0.8.2 (2014-05-12)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed multi-line field parsing (Issue #36).</li>
 <li>Added unique_everseen() to ipwhois.utils to fix multi-line field order.</li>
 <li>Re-added support for RIPE RWS now that their API is fixed.</li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h2>0.8.1 (2014-03-05)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>0.8.1 (2014-03-05)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed encoding error in IPWhois.get_whois().</li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h2>0.8.0 (2014-02-18)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>0.8.0 (2014-02-18)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added ASNRegistryError to handle unknown ASN registry return values.</li>
 <li>Added ASN registry lookup third tier fallback to ARIN.</li>
@@ -255,15 +295,15 @@ country code information from iso.org.</li>
 <li>Removed RADB fallback, since RIPE removed it.</li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h2>0.7.0 (2014-01-14)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h2>0.7.0 (2014-01-14)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added Python 2.6+ support.</li>
 <li>The country field in net dicts is now forced uppercase.</li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h2>0.6.0 (2014-01-13)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h2>0.6.0 (2014-01-13)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added APNIC RWS support for IPWhois.lookup_rws().</li>
 <li>Fixed issue in IPWhois.lookup_rws() for radb-grs fallback.</li>
@@ -310,7 +350,7 @@ country code information from iso.org.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.10.2',
+            VERSION:'0.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -1,0 +1,936 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ipwhois.whois &mdash; ipwhois 0.11.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ipwhois 0.11.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ipwhois
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Readme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#links">Links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#github">Github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#pypi">Pypi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#usage-examples">Usage Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#rdap-http">RDAP (HTTP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#use-a-proxy">Use a proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#legacy-whois">Legacy Whois</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#id1">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#utilities">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#installing">Installing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#id2">RDAP (HTTP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#upgrading-from-0-10-to-0-11">Upgrading from 0.10 to 0.11</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#legacy-whois-parsing">Legacy Whois Parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#country-codes">Country Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#ip-reputation-support">IP Reputation Support?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#domain-support">Domain Support?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#special-thanks">Special Thanks</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">License</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGES.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id1">0.11.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id2">0.10.3 (2015-08-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id3">0.10.2 (2015-05-19)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id4">0.10.1 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id5">0.10.0 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id6">0.9.1 (2014-10-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id7">0.9.0 (2014-07-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id8">0.8.2 (2014-05-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id9">0.8.1 (2014-03-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id10">0.8.0 (2014-02-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id11">0.7.0 (2014-01-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id12">0.6.0 (2014-01-13)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGES.old.html">Changelog (Archive)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id1">0.5.2 (2013-12-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id2">0.5.1 (2013-12-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id3">0.5.0 (2013-11-20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id4">0.4.0 (2013-10-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id5">0.3.0 (2013-09-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id6">0.2.1 (2013-09-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id7">0.2.0 (2013-09-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id8">0.1.9 (2013-09-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id9">0.1.8 (2013-09-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id10">0.1.7 (2013-09-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id11">0.1.6 (2013-09-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id12">0.1.5 (2013-09-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id13">0.1.4 (2013-09-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id14">0.1.3 (2013-09-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id15">0.1.2 (2013-09-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id16">0.1.1 (2013-09-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id17">0.1.0 (2013-09-06)</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ipwhois</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>ipwhois.whois</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for ipwhois.whois</h1><div class="highlight"><pre>
+<span class="c"># Copyright (c) 2013, 2014, 2015 Philip Hane</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c"># modification, are permitted provided that the following conditions are met:</span>
+<span class="c">#</span>
+<span class="c"># 1. Redistributions of source code must retain the above copyright notice,</span>
+<span class="c">#    this list of conditions and the following disclaimer.</span>
+<span class="c"># 2. Redistributions in binary form must reproduce the above copyright notice,</span>
+<span class="c">#    this list of conditions and the following disclaimer in the documentation</span>
+<span class="c">#    and/or other materials provided with the distribution.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span>
+<span class="c"># AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<span class="c"># IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span>
+<span class="c"># ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</span>
+<span class="c"># LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span>
+<span class="c"># CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span>
+<span class="c"># SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span>
+<span class="c"># INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span>
+<span class="c"># CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span>
+<span class="c"># ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span>
+<span class="c"># POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">unique_everseen</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="p">(</span><span class="n">BlacklistError</span><span class="p">,</span> <span class="n">WhoisLookupError</span><span class="p">,</span> <span class="n">NetError</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">ipaddress</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ip_address</span><span class="p">,</span>
+                           <span class="n">ip_network</span><span class="p">,</span>
+                           <span class="n">summarize_address_range</span><span class="p">,</span>
+                           <span class="n">collapse_addresses</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">ipaddr</span> <span class="kn">import</span> <span class="p">(</span><span class="n">IPAddress</span> <span class="k">as</span> <span class="n">ip_address</span><span class="p">,</span>
+                        <span class="n">IPNetwork</span> <span class="k">as</span> <span class="n">ip_network</span><span class="p">,</span>
+                        <span class="n">summarize_address_range</span><span class="p">,</span>
+                        <span class="n">collapse_address_list</span> <span class="k">as</span> <span class="n">collapse_addresses</span><span class="p">)</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="c"># Legacy base whois output dictionary. Migration to the RDAP format is limited.</span>
+<span class="n">BASE_NET</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;cidr&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;handle&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;range&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;description&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;state&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;city&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;address&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;postal_code&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;emails&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;created&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="s">&#39;updated&#39;</span><span class="p">:</span> <span class="bp">None</span>
+<span class="p">}</span>
+
+<span class="n">RIR_WHOIS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;arin&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;server&#39;</span><span class="p">:</span> <span class="s">&#39;whois.arin.net&#39;</span><span class="p">,</span>
+        <span class="s">&#39;fields&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">r&#39;(NetName):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;handle&#39;</span><span class="p">:</span> <span class="s">r&#39;(NetHandle):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;description&#39;</span><span class="p">:</span> <span class="s">r&#39;(OrgName|CustName):[^\S\n]+(?P&lt;val&gt;.+?)&#39;</span>
+                    <span class="s">&#39;(?=(</span><span class="se">\n</span><span class="s">\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="s">r&#39;(Country):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;state&#39;</span><span class="p">:</span> <span class="s">r&#39;(StateProv):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;city&#39;</span><span class="p">:</span> <span class="s">r&#39;(City):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;address&#39;</span><span class="p">:</span> <span class="s">r&#39;(Address):[^\S\n]+(?P&lt;val&gt;.+?)(?=(\n\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;postal_code&#39;</span><span class="p">:</span> <span class="s">r&#39;(PostalCode):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;emails&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s">r&#39;.+?:.*?[^\S\n]+(?P&lt;val&gt;[\w\-\.]+?@[\w\-\.]+\.[\w\-]+)(&#39;</span>
+                <span class="s">&#39;[^\S</span><span class="se">\n</span><span class="s">]+.*?)*?</span><span class="se">\n</span><span class="s">&#39;</span>
+            <span class="p">),</span>
+            <span class="s">&#39;created&#39;</span><span class="p">:</span> <span class="s">r&#39;(RegDate):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;updated&#39;</span><span class="p">:</span> <span class="s">r&#39;(Updated):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s">&#39;dt_format&#39;</span><span class="p">:</span> <span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&#39;ripencc&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;server&#39;</span><span class="p">:</span> <span class="s">&#39;whois.ripe.net&#39;</span><span class="p">,</span>
+        <span class="s">&#39;fields&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">r&#39;(netname):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;handle&#39;</span><span class="p">:</span> <span class="s">r&#39;(nic-hdl):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;description&#39;</span><span class="p">:</span> <span class="s">r&#39;(descr):[^\S\n]+(?P&lt;val&gt;.+?)(?=(\n\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="s">r&#39;(country):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;address&#39;</span><span class="p">:</span> <span class="s">r&#39;(address):[^\S\n]+(?P&lt;val&gt;.+?)(?=(\n\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;emails&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s">r&#39;.+?:.*?[^\S\n]+(?P&lt;val&gt;[\w\-\.]+?@[\w\-\.]+\.[\w\-]+)(&#39;</span>
+                <span class="s">&#39;[^\S</span><span class="se">\n</span><span class="s">]+.*?)*?</span><span class="se">\n</span><span class="s">&#39;</span>
+            <span class="p">),</span>
+            <span class="s">&#39;created&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s">r&#39;(created):[^\S\n]+(?P&lt;val&gt;[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]&#39;</span>
+                <span class="s">&#39;{2}:[0-9]{2}:[0-9]{2}Z).*?</span><span class="se">\n</span><span class="s">&#39;</span>
+            <span class="p">),</span>
+            <span class="s">&#39;updated&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s">r&#39;(last-modified):[^\S\n]+(?P&lt;val&gt;[0-9]{4}-[0-9]{2}-[0-9]{2}T&#39;</span>
+                <span class="s">&#39;[0-9]{2}:[0-9]{2}:[0-9]{2}Z).*?</span><span class="se">\n</span><span class="s">&#39;</span>
+            <span class="p">)</span>
+        <span class="p">},</span>
+        <span class="s">&#39;dt_format&#39;</span><span class="p">:</span> <span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">T%H:%M:%SZ&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&#39;apnic&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;server&#39;</span><span class="p">:</span> <span class="s">&#39;whois.apnic.net&#39;</span><span class="p">,</span>
+        <span class="s">&#39;fields&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">r&#39;(netname):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;handle&#39;</span><span class="p">:</span> <span class="s">r&#39;(nic-hdl):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;description&#39;</span><span class="p">:</span> <span class="s">r&#39;(descr):[^\S\n]+(?P&lt;val&gt;.+?)(?=(\n\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="s">r&#39;(country):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;address&#39;</span><span class="p">:</span> <span class="s">r&#39;(address):[^\S\n]+(?P&lt;val&gt;.+?)(?=(\n\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;emails&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s">r&#39;.+?:.*?[^\S\n]+(?P&lt;val&gt;[\w\-\.]+?@[\w\-\.]+\.[\w\-]+)(&#39;</span>
+                <span class="s">&#39;[^\S</span><span class="se">\n</span><span class="s">]+.*?)*?</span><span class="se">\n</span><span class="s">&#39;</span>
+            <span class="p">),</span>
+            <span class="s">&#39;updated&#39;</span><span class="p">:</span> <span class="s">r&#39;(changed):[^\S\n]+.*(?P&lt;val&gt;[0-9]{8}).*?\n&#39;</span>
+        <span class="p">},</span>
+        <span class="s">&#39;dt_format&#39;</span><span class="p">:</span> <span class="s">&#39;%Y%m</span><span class="si">%d</span><span class="s">&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&#39;lacnic&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;server&#39;</span><span class="p">:</span> <span class="s">&#39;whois.lacnic.net&#39;</span><span class="p">,</span>
+        <span class="s">&#39;fields&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&#39;handle&#39;</span><span class="p">:</span> <span class="s">r&#39;(nic-hdl):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;description&#39;</span><span class="p">:</span> <span class="s">r&#39;(owner):[^\S\n]+(?P&lt;val&gt;.+?)(?=(\n\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="s">r&#39;(country):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;emails&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s">r&#39;.+?:.*?[^\S\n]+(?P&lt;val&gt;[\w\-\.]+?@[\w\-\.]+\.[\w\-]+)(&#39;</span>
+                <span class="s">&#39;[^\S</span><span class="se">\n</span><span class="s">]+.*?)*?</span><span class="se">\n</span><span class="s">&#39;</span>
+            <span class="p">),</span>
+            <span class="s">&#39;created&#39;</span><span class="p">:</span> <span class="s">r&#39;(created):[^\S\n]+(?P&lt;val&gt;[0-9]{8}).*?\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;updated&#39;</span><span class="p">:</span> <span class="s">r&#39;(changed):[^\S\n]+(?P&lt;val&gt;[0-9]{8}).*?\n&#39;</span>
+        <span class="p">},</span>
+        <span class="s">&#39;dt_format&#39;</span><span class="p">:</span> <span class="s">&#39;%Y%m</span><span class="si">%d</span><span class="s">&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&#39;afrinic&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;server&#39;</span><span class="p">:</span> <span class="s">&#39;whois.afrinic.net&#39;</span><span class="p">,</span>
+        <span class="s">&#39;fields&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">r&#39;(netname):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;handle&#39;</span><span class="p">:</span> <span class="s">r&#39;(nic-hdl):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;description&#39;</span><span class="p">:</span> <span class="s">r&#39;(descr):[^\S\n]+(?P&lt;val&gt;.+?)(?=(\n\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="s">r&#39;(country):[^\S\n]+(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+            <span class="s">&#39;address&#39;</span><span class="p">:</span> <span class="s">r&#39;(address):[^\S\n]+(?P&lt;val&gt;.+?)(?=(\n\S):?)&#39;</span><span class="p">,</span>
+            <span class="s">&#39;emails&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s">r&#39;.+?:.*?[^\S\n]+(?P&lt;val&gt;[\w\-\.]+?@[\w\-\.]+\.[\w\-]+)(&#39;</span>
+                <span class="s">&#39;[^\S</span><span class="se">\n</span><span class="s">]+.*?)*?</span><span class="se">\n</span><span class="s">&#39;</span>
+            <span class="p">),</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">RWHOIS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;fields&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;cidr&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:IP-Network):(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:ID):(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="s">&#39;description&#39;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s">r&#39;(network:(Org-Name|Organization(;I)?)):(?P&lt;val&gt;.+?)\n&#39;</span>
+        <span class="p">),</span>
+        <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:(Country|Country-Code)):(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="s">&#39;state&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:State):(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="s">&#39;city&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:City):(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="s">&#39;address&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:Street-Address):(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="s">&#39;postal_code&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:Postal-Code):(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="s">&#39;emails&#39;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s">r&#39;.+?:.*?[^\S\n]+(?P&lt;val&gt;[\w\-\.]+?@[\w\-\.]+\.[\w\-]+)(&#39;</span>
+            <span class="s">&#39;[^\S</span><span class="se">\n</span><span class="s">]+.*?)*?</span><span class="se">\n</span><span class="s">&#39;</span>
+        <span class="p">),</span>
+        <span class="s">&#39;created&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:Created):(?P&lt;val&gt;.+?)\n&#39;</span><span class="p">,</span>
+        <span class="s">&#39;updated&#39;</span><span class="p">:</span> <span class="s">r&#39;(network:Updated):(?P&lt;val&gt;.+?)\n&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">ASN_REFERRALS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;whois://whois.ripe.net&#39;</span><span class="p">:</span> <span class="s">&#39;ripencc&#39;</span><span class="p">,</span>
+    <span class="s">&#39;whois://whois.apnic.net&#39;</span><span class="p">:</span> <span class="s">&#39;apnic&#39;</span><span class="p">,</span>
+    <span class="s">&#39;whois://whois.lacnic.net&#39;</span><span class="p">:</span> <span class="s">&#39;lacnic&#39;</span><span class="p">,</span>
+    <span class="s">&#39;whois://whois.afrinic.net&#39;</span><span class="p">:</span> <span class="s">&#39;afrinic&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="Whois"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.whois.Whois">[docs]</a><span class="k">class</span> <span class="nc">Whois</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for parsing via RDAP:</span>
+<span class="sd">    https://www.arin.net/resources/rdap.html</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        net: A ipwhois.net.Net object.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        NetError: The parameter provided is not an instance of</span>
+<span class="sd">            ipwhois.net.Net</span>
+<span class="sd">        IPDefinedError: The address provided is defined (does not need to be</span>
+<span class="sd">            resolved).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">net</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">.net</span> <span class="kn">import</span> <span class="n">Net</span>
+
+        <span class="c"># ipwhois.net.Net validation</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">Net</span><span class="p">):</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_net</span> <span class="o">=</span> <span class="n">net</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="k">raise</span> <span class="n">NetError</span><span class="p">(</span><span class="s">&#39;The provided net parameter is not an instance of &#39;</span>
+                           <span class="s">&#39;ipwhois.net.Net&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_parse_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">fields_dict</span><span class="p">,</span> <span class="n">net_start</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                      <span class="n">net_end</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dt_format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">field_list</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing whois fields from a data input.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            response: The response from the whois/rwhois server.</span>
+<span class="sd">            fields_dict: The dictionary of fields -&gt; regex search values.</span>
+<span class="sd">            net_start: The starting point of the network (if parsing multiple</span>
+<span class="sd">                networks).</span>
+<span class="sd">            net_end: The ending point of the network (if parsing multiple</span>
+<span class="sd">                networks).</span>
+<span class="sd">            dt_format: The format of datetime fields if known.</span>
+<span class="sd">            field_list: If provided, a list of fields to parse:</span>
+<span class="sd">                [&#39;name&#39;, &#39;handle&#39;, &#39;description&#39;, &#39;country&#39;, &#39;state&#39;, &#39;city&#39;,</span>
+<span class="sd">                &#39;address&#39;, &#39;postal_code&#39;, &#39;emails&#39;, &#39;created&#39;, &#39;updated&#39;]</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dictionary: A dictionary of fields provided in fields_dict.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">field_list</span><span class="p">:</span>
+
+            <span class="n">field_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;handle&#39;</span><span class="p">,</span> <span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="s">&#39;country&#39;</span><span class="p">,</span> <span class="s">&#39;state&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;city&#39;</span><span class="p">,</span> <span class="s">&#39;address&#39;</span><span class="p">,</span> <span class="s">&#39;postal_code&#39;</span><span class="p">,</span> <span class="s">&#39;emails&#39;</span><span class="p">,</span>
+                          <span class="s">&#39;created&#39;</span><span class="p">,</span> <span class="s">&#39;updated&#39;</span><span class="p">]</span>
+
+        <span class="n">generate</span> <span class="o">=</span> <span class="p">((</span><span class="n">field</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span> <span class="ow">in</span>
+                    <span class="n">fields_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">field_list</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">generate</span><span class="p">:</span>
+
+            <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">pattern</span><span class="p">),</span>
+                <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">net_start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+                <span class="n">match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">net_end</span><span class="p">,</span> <span class="n">net_start</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">net_end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+                <span class="n">match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">net_end</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="n">match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+            <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">sub_section_end</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">match</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">sub_section_end</span><span class="p">:</span>
+
+                    <span class="k">if</span> <span class="n">field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span>
+                        <span class="s">&#39;emails&#39;</span>
+                    <span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">sub_section_end</span> <span class="o">!=</span> <span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+
+                        <span class="k">break</span>
+
+                <span class="k">try</span><span class="p">:</span>
+
+                    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;val&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+                <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+
+                    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;val2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+                <span class="n">sub_section_end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+                <span class="n">value</span> <span class="o">=</span> <span class="bp">None</span>
+                <span class="k">try</span><span class="p">:</span>
+
+                    <span class="k">if</span> <span class="n">field</span> <span class="o">==</span> <span class="s">&#39;country&#39;</span><span class="p">:</span>
+
+                        <span class="n">value</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+                    <span class="k">elif</span> <span class="n">field</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">,</span> <span class="s">&#39;updated&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">dt_format</span><span class="p">:</span>
+
+                        <span class="n">value</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span>
+                            <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                            <span class="nb">str</span><span class="p">(</span><span class="n">dt_format</span><span class="p">))</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">)</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+
+                        <span class="n">values</span> <span class="o">=</span> <span class="n">unique_everseen</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+                <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Whois field parsing failed for {0}: {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">field</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+                    <span class="k">pass</span>
+
+                <span class="n">ret</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">_get_nets_arin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing network blocks from ARIN whois data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            response: The response from the ARIN whois server.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List: A of dictionaries containing keys: cidr, start, end.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">nets</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c"># Find the first NetRange value.</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+            <span class="s">r&#39;^NetRange:[^\S\n]+(.+)$&#39;</span><span class="p">,</span>
+            <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span>
+        <span class="p">)</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="n">net_range</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">net_range_start</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">if</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">net_range</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">net_range_start</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+        <span class="c"># Iterate through all of the networks found, storing the CIDR value</span>
+        <span class="c"># and the start and end positions.</span>
+        <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span>
+            <span class="s">r&#39;^CIDR:[^\S\n]+(.+?,[^\S\n].+|.+)$&#39;</span><span class="p">,</span>
+            <span class="n">response</span><span class="p">,</span>
+            <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span>
+        <span class="p">):</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="n">net</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">BASE_NET</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nets</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">())</span>
+                    <span class="n">net_range</span> <span class="o">=</span> <span class="bp">None</span>
+                    <span class="n">net_range_start</span> <span class="o">=</span> <span class="bp">None</span>
+                    <span class="k">if</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">net_range</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                        <span class="n">net_range_start</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">net_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">net_range_start</span> <span class="o">&lt;</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">nets</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">net</span><span class="p">[</span><span class="s">&#39;range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">net_range</span>
+
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;cidr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="p">[</span><span class="n">ip_network</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span>
+                     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="p">)]</span>
+                <span class="p">)</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+                <span class="n">nets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+                <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="n">nets</span>
+
+    <span class="k">def</span> <span class="nf">_get_nets_lacnic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing network blocks from LACNIC whois data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            response: The response from the LACNIC whois server.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List: A of dictionaries containing keys: cidr, start, end.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">nets</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c"># Iterate through all of the networks found, storing the CIDR value</span>
+        <span class="c"># and the start and end positions.</span>
+        <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span>
+            <span class="s">r&#39;^(inetnum|inet6num|route):[^\S\n]+(.+?,[^\S\n].+|.+)$&#39;</span><span class="p">,</span>
+            <span class="n">response</span><span class="p">,</span>
+            <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span>
+        <span class="p">):</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="n">net</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">BASE_NET</span><span class="p">)</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+                <span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="p">):</span>
+
+                    <span class="n">count</span> <span class="o">=</span> <span class="n">addr</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">count</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+
+                        <span class="n">addr_split</span> <span class="o">=</span> <span class="n">addr</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+                            <span class="n">addr_split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="s">&#39;.0&#39;</span>
+
+                        <span class="n">addr</span> <span class="o">=</span> <span class="s">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">addr_split</span><span class="p">)</span>
+
+                    <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ip_network</span><span class="p">(</span><span class="n">addr</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span><span class="o">.</span><span class="n">__str__</span><span class="p">())</span>
+
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;cidr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+                <span class="n">nets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+                <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="n">nets</span>
+
+    <span class="k">def</span> <span class="nf">_get_nets_other</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing network blocks from generic whois data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            response: The response from the whois/rwhois server.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List: A of dictionaries containing keys: cidr, start, end.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">nets</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c"># Iterate through all of the networks found, storing the CIDR value</span>
+        <span class="c"># and the start and end positions.</span>
+        <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span>
+            <span class="s">r&#39;^(inetnum|inet6num|route):[^\S\n]+((.+?)[^\S\n]-[^\S\n](.+)|&#39;</span>
+                <span class="s">&#39;.+)$&#39;</span><span class="p">,</span>
+            <span class="n">response</span><span class="p">,</span>
+            <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span>
+        <span class="p">):</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="n">net</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">BASE_NET</span><span class="p">)</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="ow">and</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+
+                    <span class="n">addrs</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="n">addrs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">summarize_address_range</span><span class="p">(</span>
+                        <span class="n">ip_address</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()),</span>
+                        <span class="n">ip_address</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())))</span>
+
+                    <span class="n">cidr</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                        <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">collapse_addresses</span><span class="p">(</span><span class="n">addrs</span><span class="p">)]</span>
+                    <span class="p">)</span>
+
+                <span class="k">else</span><span class="p">:</span>
+
+                    <span class="n">cidr</span> <span class="o">=</span> <span class="n">ip_network</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span>
+
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;cidr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cidr</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+                <span class="n">nets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="n">nets</span>
+
+<div class="viewcode-block" id="Whois.lookup"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.whois.Whois.lookup">[docs]</a>    <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inc_raw</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">retry_count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+               <span class="n">get_referral</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">extra_blacklist</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+               <span class="n">ignore_referral_errors</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">asn_data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+               <span class="n">field_list</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for retrieving and parsing whois information for an IP</span>
+<span class="sd">        address via port 43 (WHOIS).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            inc_raw: Boolean for whether to include the raw results in the</span>
+<span class="sd">                returned dictionary.</span>
+<span class="sd">            retry_count: The number of times to retry in case socket errors,</span>
+<span class="sd">                timeouts, connection resets, etc. are encountered.</span>
+<span class="sd">            response: Optional response object, this bypasses the Whois lookup.</span>
+<span class="sd">            get_referral: Boolean for whether to retrieve referral whois</span>
+<span class="sd">                information, if available.</span>
+<span class="sd">            extra_blacklist: A list of blacklisted whois servers in addition to</span>
+<span class="sd">                the global BLACKLIST.</span>
+<span class="sd">            ignore_referral_errors: Boolean for whether to ignore and continue</span>
+<span class="sd">                when an exception is encountered on referral whois lookups.</span>
+<span class="sd">            asn_data: Optional ASN result object, this bypasses the ASN lookup.</span>
+<span class="sd">            field_list: If provided, a list of fields to parse:</span>
+<span class="sd">                [&#39;name&#39;, &#39;handle&#39;, &#39;description&#39;, &#39;country&#39;, &#39;state&#39;, &#39;city&#39;,</span>
+<span class="sd">                &#39;address&#39;, &#39;postal_code&#39;, &#39;emails&#39;, &#39;created&#39;, &#39;updated&#39;]</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dictionary:</span>
+
+<span class="sd">            :query: The IP address (String)</span>
+<span class="sd">            :asn: The Autonomous System Number (String)</span>
+<span class="sd">            :asn_date: The ASN Allocation date (String)</span>
+<span class="sd">            :asn_registry: The assigned ASN registry (String)</span>
+<span class="sd">            :asn_cidr: The assigned ASN CIDR (String)</span>
+<span class="sd">            :asn_country_code: The assigned ASN country code (String)</span>
+<span class="sd">            :nets: Dictionaries containing network information which consists</span>
+<span class="sd">                of the fields listed in the NIC_WHOIS dictionary. (List)</span>
+<span class="sd">            :raw: Raw whois results if the inc_raw parameter is True. (String)</span>
+<span class="sd">            :referral: Dictionary of referral whois information if get_referral</span>
+<span class="sd">                is True and the server isn&#39;t blacklisted. Consists of fields</span>
+<span class="sd">                listed in the RWHOIS dictionary. Additional referral server</span>
+<span class="sd">                informaion is added in the server and port keys. (Dictionary)</span>
+<span class="sd">            :raw_referral: Raw referral whois results if the inc_raw parameter</span>
+<span class="sd">                is True. (String)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># Create the return dictionary.</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;query&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">address_str</span><span class="p">,</span>
+            <span class="s">&#39;nets&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s">&#39;raw&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;referral&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;raw_referral&#39;</span><span class="p">:</span> <span class="bp">None</span>
+        <span class="p">}</span>
+
+        <span class="c"># The referral server and port. Only used if get_referral is True.</span>
+        <span class="n">referral_server</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">referral_port</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c"># Only fetch the response if we haven&#39;t already.</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">asn_data</span><span class="p">[</span><span class="s">&#39;asn_registry&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;arin&#39;</span><span class="p">:</span>
+
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Response not given, perform WHOIS lookup for {0}&#39;</span>
+                      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">address_str</span><span class="p">))</span>
+
+            <span class="c"># Retrieve the whois data.</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">get_whois</span><span class="p">(</span><span class="n">asn_data</span><span class="p">[</span><span class="s">&#39;asn_registry&#39;</span><span class="p">],</span>
+                                           <span class="n">retry_count</span><span class="p">,</span>
+                                           <span class="n">extra_blacklist</span><span class="o">=</span><span class="n">extra_blacklist</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">get_referral</span><span class="p">:</span>
+
+                <span class="c"># Search for a referral server.</span>
+                <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span>
+                    <span class="s">r&#39;^ReferralServer:[^\S\n]+(.+:[0-9]+)$&#39;</span><span class="p">,</span>
+                    <span class="n">response</span><span class="p">,</span>
+                    <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span>
+                <span class="p">):</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+
+                        <span class="n">temp</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="s">&#39;rwhois://&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span>
+                            <span class="k">raise</span> <span class="ne">ValueError</span>
+
+                        <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;rwhois://&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">)</span>
+
+                        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">65535</span><span class="p">:</span>
+                            <span class="k">raise</span> <span class="ne">ValueError</span>
+
+                        <span class="n">referral_server</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">referral_port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+                    <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+
+                        <span class="k">continue</span>
+
+                    <span class="k">break</span>
+
+        <span class="c"># Retrieve the referral whois data.</span>
+        <span class="k">if</span> <span class="n">get_referral</span> <span class="ow">and</span> <span class="n">referral_server</span><span class="p">:</span>
+
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Perform referral WHOIS lookup&#39;</span><span class="p">)</span>
+
+            <span class="n">response_ref</span> <span class="o">=</span> <span class="bp">None</span>
+
+            <span class="k">if</span> <span class="n">ignore_referral_errors</span><span class="p">:</span>
+
+                <span class="k">try</span><span class="p">:</span>
+
+                    <span class="n">response_ref</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">get_whois</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                                                       <span class="n">retry_count</span><span class="p">,</span>
+                                                       <span class="n">referral_server</span><span class="p">,</span>
+                                                       <span class="n">referral_port</span><span class="p">,</span>
+                                                       <span class="n">extra_blacklist</span><span class="p">)</span>
+
+                <span class="k">except</span> <span class="p">(</span><span class="n">BlacklistError</span><span class="p">,</span> <span class="n">WhoisLookupError</span><span class="p">):</span>
+
+                    <span class="k">pass</span>
+
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="n">response_ref</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">get_whois</span><span class="p">(</span>
+                    <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">retry_count</span><span class="p">,</span> <span class="n">referral_server</span><span class="p">,</span> <span class="n">referral_port</span><span class="p">,</span>
+                    <span class="n">extra_blacklist</span>
+                <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">response_ref</span><span class="p">:</span>
+
+                <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Parsing referral WHOIS data&#39;</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">inc_raw</span><span class="p">:</span>
+
+                    <span class="n">results</span><span class="p">[</span><span class="s">&#39;raw_referral&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response_ref</span>
+
+                <span class="n">temp_rnet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_fields</span><span class="p">(</span>
+                    <span class="n">response_ref</span><span class="p">,</span>
+                    <span class="n">RWHOIS</span><span class="p">[</span><span class="s">&#39;fields&#39;</span><span class="p">],</span>
+                    <span class="n">field_list</span><span class="o">=</span><span class="n">field_list</span>
+                <span class="p">)</span>
+
+                <span class="c"># Add the networks to the return dictionary.</span>
+                <span class="n">results</span><span class="p">[</span><span class="s">&#39;referral&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp_rnet</span>
+
+        <span class="c"># If inc_raw parameter is True, add the response to return dictionary.</span>
+        <span class="k">if</span> <span class="n">inc_raw</span><span class="p">:</span>
+
+            <span class="n">results</span><span class="p">[</span><span class="s">&#39;raw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span>
+
+        <span class="n">nets</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">asn_data</span><span class="p">[</span><span class="s">&#39;asn_registry&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;arin&#39;</span><span class="p">:</span>
+
+            <span class="n">nets_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_nets_arin</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">asn_data</span><span class="p">[</span><span class="s">&#39;asn_registry&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;lacnic&#39;</span><span class="p">:</span>
+
+            <span class="n">nets_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_nets_lacnic</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">nets_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_nets_other</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+        <span class="n">nets</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">nets_response</span><span class="p">)</span>
+
+        <span class="c"># Iterate through all of the network sections and parse out the</span>
+        <span class="c"># appropriate fields for each.</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Parsing WHOIS data&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">net</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nets</span><span class="p">):</span>
+
+            <span class="n">section_end</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nets</span><span class="p">):</span>
+
+                <span class="n">section_end</span> <span class="o">=</span> <span class="n">nets</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="s">&#39;start&#39;</span><span class="p">]</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="n">dt_format</span> <span class="o">=</span> <span class="n">RIR_WHOIS</span><span class="p">[</span><span class="n">results</span><span class="p">[</span><span class="s">&#39;asn_registry&#39;</span><span class="p">]][</span><span class="s">&#39;dt_format&#39;</span><span class="p">]</span>
+
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+
+                <span class="n">dt_format</span> <span class="o">=</span> <span class="bp">None</span>
+
+            <span class="n">temp_net</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_fields</span><span class="p">(</span>
+                <span class="n">response</span><span class="p">,</span>
+                <span class="n">RIR_WHOIS</span><span class="p">[</span><span class="n">asn_data</span><span class="p">[</span><span class="s">&#39;asn_registry&#39;</span><span class="p">]][</span><span class="s">&#39;fields&#39;</span><span class="p">],</span>
+                <span class="n">section_end</span><span class="p">,</span>
+                <span class="n">net</span><span class="p">[</span><span class="s">&#39;end&#39;</span><span class="p">],</span>
+                <span class="n">dt_format</span><span class="p">,</span>
+                <span class="n">field_list</span>
+            <span class="p">)</span>
+
+            <span class="c"># Merge the net dictionaries.</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">temp_net</span><span class="p">)</span>
+
+            <span class="c"># The start and end values are no longer needed.</span>
+            <span class="k">del</span> <span class="n">net</span><span class="p">[</span><span class="s">&#39;start&#39;</span><span class="p">],</span> <span class="n">net</span><span class="p">[</span><span class="s">&#39;end&#39;</span><span class="p">]</span>
+
+        <span class="c"># Add the networks to the return dictionary.</span>
+        <span class="n">results</span><span class="p">[</span><span class="s">&#39;nets&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nets</span>
+
+        <span class="k">return</span> <span class="n">results</span></div></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Philip Hane.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

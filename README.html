@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ipwhois &mdash; ipwhois 0.10.2 documentation</title>
+  <title>ipwhois &mdash; ipwhois 0.11.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="ipwhois 0.10.2 documentation" href="index.html"/>
+    <link rel="top" title="ipwhois 0.11.0 documentation" href="index.html"/>
         <link rel="next" title="License" href="LICENSE.html"/>
         <link rel="prev" title="ipwhois" href="index.html"/> 
 
@@ -76,24 +76,37 @@
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#links">Links</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#github">Github</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pypi">Pypi</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usage-examples">Usage Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#typical-usage">Typical usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#use-a-proxy">Use a proxy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rdap-http">RDAP (HTTP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#use-a-proxy">Use a proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#legacy-whois">Legacy Whois</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utilities">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing">Installing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#parsing">Parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rest-http">REST (HTTP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">RDAP (HTTP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upgrading-from-0-10-to-0-11">Upgrading from 0.10 to 0.11</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#legacy-whois-parsing">Legacy Whois Parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#country-codes">Country Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ip-reputation-support">IP Reputation Support?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#domain-support">Domain Support?</a></li>
@@ -106,16 +119,18 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CHANGES.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id1">0.10.2 (2015-05-19)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id2">0.10.1 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id3">0.10.0 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id4">0.9.1 (2014-10-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id5">0.9.0 (2014-07-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id6">0.8.2 (2014-05-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id7">0.8.1 (2014-03-05)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id8">0.8.0 (2014-02-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id9">0.7.0 (2014-01-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id10">0.6.0 (2014-01-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id1">0.11.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id2">0.10.3 (2015-08-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id3">0.10.2 (2015-05-19)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id4">0.10.1 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id5">0.10.0 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id6">0.9.1 (2014-10-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id7">0.9.0 (2014-07-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id8">0.8.2 (2014-05-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id9">0.8.1 (2014-03-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id10">0.8.0 (2014-02-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id11">0.7.0 (2014-01-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id12">0.6.0 (2014-01-13)</a></li>
 </ul>
 </li>
 </ul>
@@ -179,14 +194,16 @@
 <h1>ipwhois<a class="headerlink" href="#ipwhois" title="Permalink to this headline">¶</a></h1>
 <p>ipwhois is a Python package focused on retrieving and parsing whois data
 for IPv4 and IPv6 addresses.</p>
+<p>RDAP is now the recommended query method. Please see the
+<a class="reference external" href="#upgrading-from-0-10-to-0-11">upgrade info</a>.</p>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Parses a majority of whois fields in to a standard dictionary</li>
 <li>IPv4 and IPv6 support</li>
 <li>Referral whois support</li>
-<li>Supports REST queries (useful if whois is blocked from your network)</li>
-<li>Proxy support for REST queries</li>
+<li>Supports RDAP queries (recommended method, more detailed information)</li>
+<li>Proxy support for RDAP queries</li>
 <li>Recursive network parsing for IPs with parent/children networks listed</li>
 <li>Python 2.6+ and 3.3+ supported</li>
 <li>Useful set of utilities</li>
@@ -199,6 +216,10 @@ for IPv4 and IPv6 addresses.</p>
 <h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://secynic.github.io/ipwhois">https://secynic.github.io/ipwhois</a></p>
 </div>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/secynic/ipwhois/tree/master/ipwhois/examples">https://github.com/secynic/ipwhois/tree/master/ipwhois/examples</a></p>
+</div>
 <div class="section" id="github">
 <h3>Github<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/secynic/ipwhois">https://github.com/secynic/ipwhois</a></p>
@@ -210,8 +231,118 @@ for IPv4 and IPv6 addresses.</p>
 </div>
 <div class="section" id="usage-examples">
 <h2>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="typical-usage">
-<h3>Typical usage<a class="headerlink" href="#typical-usage" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="rdap-http">
+<h3>RDAP (HTTP)<a class="headerlink" href="#rdap-http" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="basic-usage">
+<h4>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
+<span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
+
+<span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;74.125.225.229&#39;)</span>
+<span class="go">&gt;&gt;&gt;&gt; results = obj.lookup_rdap(depth=1)</span>
+<span class="go">&gt;&gt;&gt;&gt; pprint(results)</span>
+
+<span class="go">{</span>
+<span class="go">&#39;entities&#39;: [&#39;GOGL&#39;],</span>
+<span class="go">&#39;network&#39;: {</span>
+<span class="go">    &#39;country&#39;: None,</span>
+<span class="go">     &#39;end_address&#39;: &#39;74.125.255.255&#39;,</span>
+<span class="go">     &#39;events&#39;: [{&#39;action&#39;: &#39;last changed&#39;,</span>
+<span class="go">                 &#39;actor&#39;: None,</span>
+<span class="go">                 &#39;timestamp&#39;: &#39;2012-02-24T09:44:34-05:00&#39;},</span>
+<span class="go">                {&#39;action&#39;: &#39;registration&#39;,</span>
+<span class="go">                 &#39;actor&#39;: None,</span>
+<span class="go">                 &#39;timestamp&#39;: &#39;2007-03-13T12:09:54-04:00&#39;}],</span>
+<span class="go">     &#39;handle&#39;: &#39;NET-74-125-0-0-1&#39;,</span>
+<span class="go">     &#39;ip_version&#39;: &#39;v4&#39;,</span>
+<span class="go">     &#39;links&#39;: [&#39;https://rdap.arin.net/registry/ip/074.125.000.000&#39;,</span>
+<span class="go">               &#39;http://whois.arin.net/rest/net/NET-74-125-0-0-1&#39;],</span>
+<span class="go">     &#39;name&#39;: &#39;GOOGLE&#39;,</span>
+<span class="go">     &#39;notices&#39;: [{&#39;description&#39;: &#39;By using the ARIN RDAP/Whois service, you are agreeing to the RDAP/Whois Terms of Use&#39;,</span>
+<span class="go">                  &#39;title&#39;: &#39;Terms of Service&#39;}],</span>
+<span class="go">     &#39;parent_handle&#39;: &#39;NET-74-0-0-0-0&#39;,</span>
+<span class="go">     &#39;raw&#39;: None,</span>
+<span class="go">     &#39;remarks&#39;: None,</span>
+<span class="go">     &#39;start_address&#39;: &#39;74.125.0.0&#39;,</span>
+<span class="go">     &#39;status&#39;: None,</span>
+<span class="go">     &#39;type&#39;: None</span>
+<span class="go">},</span>
+<span class="go">&#39;objects&#39;: {</span>
+<span class="go">    &#39;GOGL&#39;: {&#39;contact&#39;: {&#39;address&#39;: [{</span>
+<span class="go">        &#39;type&#39;: None,</span>
+<span class="go">        &#39;value&#39;: &#39;1600 Amphitheatre Parkway\nMountain View\nCA\n94043\nUNITED STATES&#39;}],</span>
+<span class="go">        &#39;email&#39;: None,</span>
+<span class="go">        &#39;kind&#39;: &#39;org&#39;,</span>
+<span class="go">        &#39;name&#39;: &#39;Google Inc.&#39;,</span>
+<span class="go">        &#39;phone&#39;: None,</span>
+<span class="go">        &#39;role&#39;: None,</span>
+<span class="go">        &#39;title&#39;: None},</span>
+<span class="go">        &#39;entities&#39;: [&#39;ZG39-ARIN&#39;],</span>
+<span class="go">        &#39;events&#39;: [{&#39;action&#39;: &#39;last changed&#39;,</span>
+<span class="go">                  &#39;actor&#39;: None,</span>
+<span class="go">                  &#39;timestamp&#39;: &#39;2013-08-07T19:59:17-04:00&#39;},</span>
+<span class="go">                 {&#39;action&#39;: &#39;registration&#39;,</span>
+<span class="go">                  &#39;actor&#39;: None,</span>
+<span class="go">                  &#39;timestamp&#39;: &#39;2000-03-30T00:00:00-05:00&#39;}],</span>
+<span class="go">        &#39;events_actor&#39;: None,</span>
+<span class="go">        &#39;handle&#39;: &#39;GOGL&#39;,</span>
+<span class="go">        &#39;links&#39;: [&#39;https://rdap.arin.net/registry/entity/GOGL&#39;,</span>
+<span class="go">                &#39;http://whois.arin.net/rest/org/GOGL&#39;],</span>
+<span class="go">        &#39;notices&#39;: None,</span>
+<span class="go">        &#39;raw&#39;: None,</span>
+<span class="go">        &#39;remarks&#39;: None,</span>
+<span class="go">        &#39;roles&#39;: [&#39;registrant&#39;],</span>
+<span class="go">        &#39;status&#39;: None},</span>
+<span class="go">    &#39;ZG39-ARIN&#39;: {&#39;contact&#39;: {&#39;address&#39;: [{</span>
+<span class="go">        &#39;type&#39;: None,</span>
+<span class="go">        &#39;value&#39;: &#39;1600 Amphitheatre Parkway\nMountain View\nCA\n94043\nUNITED STATES&#39;}],</span>
+<span class="go">        &#39;email&#39;: [{&#39;type&#39;: None,</span>
+<span class="go">                  &#39;value&#39;: &#39;arin-contact@google.com&#39;}],</span>
+<span class="go">        &#39;kind&#39;: &#39;group&#39;,</span>
+<span class="go">        &#39;name&#39;: &#39;Google Inc&#39;,</span>
+<span class="go">        &#39;phone&#39;: [{&#39;type&#39;: [&#39;work&#39;,</span>
+<span class="go">                           &#39;voice&#39;],</span>
+<span class="go">                  &#39;value&#39;: &#39;+1-650-253-0000&#39;}],</span>
+<span class="go">        &#39;role&#39;: None,</span>
+<span class="go">        &#39;title&#39;: None},</span>
+<span class="go">        &#39;entities&#39;: None,</span>
+<span class="go">        &#39;events&#39;: [{&#39;action&#39;: &#39;last changed&#39;,</span>
+<span class="go">                   &#39;actor&#39;: None,</span>
+<span class="go">                   &#39;timestamp&#39;: &#39;2015-09-01T14:03:11-04:00&#39;},</span>
+<span class="go">                  {&#39;action&#39;: &#39;registration&#39;,</span>
+<span class="go">                   &#39;actor&#39;: None,</span>
+<span class="go">                   &#39;timestamp&#39;: &#39;2000-11-30T13:54:08-05:00&#39;}],</span>
+<span class="go">        &#39;events_actor&#39;: None,</span>
+<span class="go">        &#39;handle&#39;: &#39;ZG39-ARIN&#39;,</span>
+<span class="go">        &#39;links&#39;: [&#39;https://rdap.arin.net/registry/entity/ZG39-ARIN&#39;,</span>
+<span class="go">                 &#39;http://whois.arin.net/rest/poc/ZG39-ARIN&#39;],</span>
+<span class="go">        &#39;notices&#39;: [{&#39;description&#39;: &#39;By using the ARIN RDAP/Whois service, you are agreeing to the RDAP/Whois Terms of Use&#39;,</span>
+<span class="go">                    &#39;title&#39;: &#39;Terms of Service&#39;}],</span>
+<span class="go">        &#39;raw&#39;: None,</span>
+<span class="go">        &#39;remarks&#39;: None,</span>
+<span class="go">        &#39;roles&#39;: None,</span>
+<span class="go">        &#39;status&#39;: [&#39;validated&#39;]}},</span>
+<span class="go">&#39;query&#39;: &#39;74.125.225.229&#39;,</span>
+<span class="go">&#39;raw&#39;: None</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-a-proxy">
+<h4>Use a proxy<a class="headerlink" href="#use-a-proxy" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from urllib import request</span>
+<span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
+<span class="go">&gt;&gt;&gt;&gt; handler = request.ProxyHandler({&#39;http&#39;: &#39;http://192.168.0.1:80/&#39;})</span>
+<span class="go">&gt;&gt;&gt;&gt; opener = request.build_opener(handler)</span>
+<span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;74.125.225.229&#39;, proxy_opener = opener)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="legacy-whois">
+<h3>Legacy Whois<a class="headerlink" href="#legacy-whois" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Basic usage<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
@@ -249,7 +380,7 @@ for IPv4 and IPv6 addresses.</p>
 </div>
 </div>
 <div class="section" id="multiple-networks-listed-and-referral-whois">
-<h3>Multiple networks listed and referral whois<a class="headerlink" href="#multiple-networks-listed-and-referral-whois" title="Permalink to this headline">¶</a></h3>
+<h4>Multiple networks listed and referral whois<a class="headerlink" href="#multiple-networks-listed-and-referral-whois" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
@@ -309,54 +440,11 @@ for IPv4 and IPv6 addresses.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="whois-lookup-via-http-rest">
-<h3>Whois lookup via HTTP (REST)<a class="headerlink" href="#whois-lookup-via-http-rest" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
-<span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
-
-<span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;74.125.225.229&#39;)</span>
-<span class="go">&gt;&gt;&gt;&gt; results = obj.lookup_rws()</span>
-<span class="go">&gt;&gt;&gt;&gt; pprint(results)</span>
-
-<span class="go">{</span>
-<span class="go">&#39;asn&#39;: &#39;15169&#39;,</span>
-<span class="go">&#39;asn_cidr&#39;: &#39;74.125.225.0/24&#39;,</span>
-<span class="go">&#39;asn_country_code&#39;: &#39;US&#39;,</span>
-<span class="go">&#39;asn_date&#39;: &#39;2007-03-13&#39;,</span>
-<span class="go">&#39;asn_registry&#39;: &#39;arin&#39;,</span>
-<span class="go">&#39;nets&#39;: [{&#39;abuse_emails&#39;: &#39;arin-contact@google.com&#39;,</span>
-<span class="go">          &#39;address&#39;: &#39;1600 Amphitheatre Parkway&#39;,</span>
-<span class="go">          &#39;cidr&#39;: &#39;74.125.0.0/16&#39;,</span>
-<span class="go">          &#39;city&#39;: &#39;Mountain View&#39;,</span>
-<span class="go">          &#39;country&#39;: &#39;US&#39;,</span>
-<span class="go">          &#39;created&#39;: &#39;2007-03-13T12:09:54-04:00&#39;,</span>
-<span class="go">          &#39;description&#39;: &#39;Google Inc.&#39;,</span>
-<span class="go">          &#39;handle&#39;: &#39;NET-74-125-0-0-1&#39;,</span>
-<span class="go">          &#39;misc_emails&#39;: None,</span>
-<span class="go">          &#39;name&#39;: &#39;GOOGLE&#39;,</span>
-<span class="go">          &#39;postal_code&#39;: &#39;94043&#39;,</span>
-<span class="go">          &#39;range&#39;: &#39;74.125.0.0 - 74.125.255.255&#39;,</span>
-<span class="go">          &#39;state&#39;: &#39;CA&#39;,</span>
-<span class="go">          &#39;tech_emails&#39;: &#39;arin-contact@google.com&#39;,</span>
-<span class="go">          &#39;updated&#39;: &#39;2012-02-24T09:44:34-05:00&#39;}],</span>
-<span class="go">&#39;query&#39;: &#39;74.125.225.229&#39;,</span>
-<span class="go">&#39;raw&#39;: None</span>
-<span class="go">}</span>
-</pre></div>
 </div>
-</div>
-<div class="section" id="use-a-proxy">
-<h3>Use a proxy<a class="headerlink" href="#use-a-proxy" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from urllib import request</span>
-<span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
-<span class="go">&gt;&gt;&gt;&gt; handler = request.ProxyHandler({&#39;http&#39;: &#39;http://192.168.0.1:80/&#39;})</span>
-<span class="go">&gt;&gt;&gt;&gt; opener = request.build_opener(handler)</span>
-<span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;74.125.225.229&#39;, proxy_opener = opener)</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="utilities">
+<h3>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="retrieve-host-information-for-an-ip-address">
-<h3>Retrieve host information for an IP address<a class="headerlink" href="#retrieve-host-information-for-an-ip-address" title="Permalink to this headline">¶</a></h3>
+<h4>Retrieve host information for an IP address<a class="headerlink" href="#retrieve-host-information-for-an-ip-address" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
@@ -369,7 +457,7 @@ for IPv4 and IPv6 addresses.</p>
 </div>
 </div>
 <div class="section" id="retrieve-the-official-country-name-for-an-iso-3166-1-country-code">
-<h3>Retrieve the official country name for an ISO 3166-1 country code<a class="headerlink" href="#retrieve-the-official-country-name-for-an-iso-3166-1-country-code" title="Permalink to this headline">¶</a></h3>
+<h4>Retrieve the official country name for an ISO 3166-1 country code<a class="headerlink" href="#retrieve-the-official-country-name-for-an-iso-3166-1-country-code" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import get_countries</span>
 
@@ -383,7 +471,7 @@ for IPv4 and IPv6 addresses.</p>
 </div>
 </div>
 <div class="section" id="parse-out-ip-addresses-and-ports-from-text-or-a-file">
-<h3>Parse out IP addresses and ports from text or a file<a class="headerlink" href="#parse-out-ip-addresses-and-ports-from-text-or-a-file" title="Permalink to this headline">¶</a></h3>
+<h4>Parse out IP addresses and ports from text or a file<a class="headerlink" href="#parse-out-ip-addresses-and-ports-from-text-or-a-file" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import unique_addresses</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
@@ -402,6 +490,7 @@ for IPv4 and IPv6 addresses.</p>
 <span class="go"> &#39;74.125.0.0/16&#39;: {&#39;count&#39;: 1, &#39;ports&#39;: {}},</span>
 <span class="go"> &#39;74.125.225.229&#39;: {&#39;count&#39;: 2, &#39;ports&#39;: {&#39;80&#39;: 1}}}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -428,8 +517,43 @@ for IPv4 and IPv6 addresses.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="parsing">
-<h2>Parsing<a class="headerlink" href="#parsing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>RDAP (HTTP)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>IPWhois.lookup_rdap() is now the recommended lookup method. RDAP provides a
+far better data structure than legacy whois and REST lookups (previous
+implementation). RDAP queries allow for parsing of contact information and
+details for users, organizations, and groups. RDAP also provides more detailed
+network information.</p>
+<p>The bootstrap feature for AFRINIC is currently not
+supported by ARIN, but should be soon
+(<a class="reference external" href="https://github.com/arineng/rdap_bootstrap_server/issues/3">https://github.com/arineng/rdap_bootstrap_server/issues/3</a>). Once the support
+is added on the ARIN side, the ipwhois code will work without any changes.</p>
+<div class="section" id="upgrading-from-0-10-to-0-11">
+<h3>Upgrading from 0.10 to 0.11<a class="headerlink" href="#upgrading-from-0-10-to-0-11" title="Permalink to this headline">¶</a></h3>
+<p>Considerable changes were made between v0.10.3 and v0.11.0. The new RDAP return
+format was introduced and split off from the legacy whois return format. Using
+RDAP lookup is the recommended method to maximize indexable values.</p>
+<p>RDAP return data is different in nearly every way from the legacy whois data.</p>
+<p>For information on raw RDAP responses, please see the RFC:
+<a class="reference external" href="https://tools.ietf.org/html/rfc7483">https://tools.ietf.org/html/rfc7483</a></p>
+<p>Here are the new standard keys for RDAP results:</p>
+<div class="highlight-python"><div class="highlight"><pre>:query: The IP address (String)
+:network: Dictionary of values returned by _RDAPNetwork. The raw
+        result is included for each entity if the inc_raw parameter is
+        True.
+:entities: List of entity keys referenced by the top level IP
+        address query.
+:objects: Dictionary of objects with the handles as keys, and the
+        dictionary returned by _RDAPEntity, etc as the values. The raw
+        result is included for each object if the inc_raw parameter is
+        True.
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="#basic-usage">example</a> for more detailed field information.</p>
+</div>
+</div>
+<div class="section" id="legacy-whois-parsing">
+<h2>Legacy Whois Parsing<a class="headerlink" href="#legacy-whois-parsing" title="Permalink to this headline">¶</a></h2>
 <p>Parsing is currently limited to CIDR, country, name, handle, range,
 description, state, city, address, postal_code, abuse_emails, tech_emails,
 misc_emails, created and updated fields. This is assuming that those fields
@@ -440,14 +564,6 @@ multiple CIDRs, they will be separated by &#8216;, &#8216;.</p>
 <p>Sometimes, you will see whois information with multiple consecutive same name
 fields, e.g., Description: some text\nDescription: more text. The parser will
 recognize this and the returned result will have the values separated by &#8216;\n&#8217;.</p>
-</div>
-<div class="section" id="rest-http">
-<h2>REST (HTTP)<a class="headerlink" href="#rest-http" title="Permalink to this headline">¶</a></h2>
-<p>IPWhois.lookup_rws() should be faster than IPWhois.lookup(), but may not be as
-reliable. REST queries do not support referral whois lookups. AFRINIC does not
-have a Whois-RWS service yet; we have to rely on the Ripe RWS service, which
-does not contain all of the data we need. The LACNIC RWS service is supported,
-but is in beta. This may result in availability or performance issues.</p>
 </div>
 <div class="section" id="country-codes">
 <h2>Country Codes<a class="headerlink" href="#country-codes" title="Permalink to this headline">¶</a></h2>
@@ -462,20 +578,19 @@ iso_3166-1.csv, which is now the default.</p>
 </div>
 <div class="section" id="ip-reputation-support">
 <h2>IP Reputation Support?<a class="headerlink" href="#ip-reputation-support" title="Permalink to this headline">¶</a></h2>
-<p>This feature is under consideration. Take a look at TekDefense&#8217;s Automater for
-now: <a class="reference external" href="https://github.com/1aN0rmus/TekDefense-Automater">TekDefense-Automater</a></p>
+<p>This feature is under consideration. Take a look at TekDefense&#8217;s Automater:</p>
+<p><a class="reference external" href="https://github.com/1aN0rmus/TekDefense-Automater">TekDefense-Automater</a></p>
 </div>
 <div class="section" id="domain-support">
 <h2>Domain Support?<a class="headerlink" href="#domain-support" title="Permalink to this headline">¶</a></h2>
-<p>There are no plans for domain whois support in this project. It is under
-consideration as a new library in the future.</p>
-<p>For now, consider using Sven Slootweg&#8217;s
+<p>There are no plans for domain whois support in this project.</p>
+<p>Look at Sven Slootweg&#8217;s
 <a class="reference external" href="https://github.com/joepie91/python-whois">python-whois</a> for a library with
 domain support.</p>
 </div>
 <div class="section" id="special-thanks">
 <h2>Special Thanks<a class="headerlink" href="#special-thanks" title="Permalink to this headline">¶</a></h2>
-<p>Thank you JetBrains for the PyCharm open source support.</p>
+<p>Thank you JetBrains for the PyCharm open source support!</p>
 </div>
 </div>
 
@@ -518,7 +633,7 @@ domain support.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.10.2',
+            VERSION:'0.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

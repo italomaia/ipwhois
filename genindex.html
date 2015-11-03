@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; ipwhois 0.10.2 documentation</title>
+  <title>Index &mdash; ipwhois 0.11.0 documentation</title>
   
 
   
@@ -31,7 +31,7 @@
   
 
   
-    <link rel="top" title="ipwhois 0.10.2 documentation" href="index.html"/> 
+    <link rel="top" title="ipwhois 0.11.0 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -75,24 +75,37 @@
 <li class="toctree-l2"><a class="reference internal" href="README.html#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#links">Links</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="README.html#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#examples">Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="README.html#github">Github</a></li>
 <li class="toctree-l3"><a class="reference internal" href="README.html#pypi">Pypi</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#usage-examples">Usage Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="README.html#typical-usage">Typical usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#use-a-proxy">Use a proxy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#rdap-http">RDAP (HTTP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#use-a-proxy">Use a proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#legacy-whois">Legacy Whois</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#id1">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#utilities">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#installing">Installing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#parsing">Parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#rest-http">REST (HTTP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id2">RDAP (HTTP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#upgrading-from-0-10-to-0-11">Upgrading from 0.10 to 0.11</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#legacy-whois-parsing">Legacy Whois Parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#country-codes">Country Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#ip-reputation-support">IP Reputation Support?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#domain-support">Domain Support?</a></li>
@@ -105,16 +118,18 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CHANGES.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id1">0.10.2 (2015-05-19)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id2">0.10.1 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id3">0.10.0 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id4">0.9.1 (2014-10-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id5">0.9.0 (2014-07-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id6">0.8.2 (2014-05-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id7">0.8.1 (2014-03-05)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id8">0.8.0 (2014-02-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id9">0.7.0 (2014-01-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id10">0.6.0 (2014-01-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id1">0.11.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id2">0.10.3 (2015-08-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id3">0.10.2 (2015-05-19)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id4">0.10.1 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id5">0.10.0 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id6">0.9.1 (2014-10-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id7">0.9.0 (2014-07-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id8">0.8.2 (2014-05-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id9">0.8.1 (2014-03-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id10">0.8.0 (2014-02-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id11">0.7.0 (2014-01-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id12">0.6.0 (2014-01-13)</a></li>
 </ul>
 </li>
 </ul>
@@ -178,51 +193,24 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
- | <a href="#B"><strong>B</strong></a>
- | <a href="#G"><strong>G</strong></a>
- | <a href="#H"><strong>H</strong></a>
+ <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  | <a href="#U"><strong>U</strong></a>
  | <a href="#W"><strong>W</strong></a>
  
 </div>
-<h2 id="A">A</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.ASNLookupError">ASNLookupError</a>
-  </dt>
-
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.ASNRegistryError">ASNRegistryError</a>
-  </dt>
-
-  </dl></td>
-</tr></table>
-
-<h2 id="B">B</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.BlacklistError">BlacklistError</a>
-  </dt>
-
-  </dl></td>
-</tr></table>
-
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois.get_asn_dns">get_asn_dns() (ipwhois.ipwhois.IPWhois method)</a>
+  <dt><a href="ipwhois.html#ipwhois.net.Net.get_asn_dns">get_asn_dns() (ipwhois.net.Net method)</a>
   </dt>
 
       
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois.get_asn_whois">get_asn_whois() (ipwhois.ipwhois.IPWhois method)</a>
+  <dt><a href="ipwhois.html#ipwhois.net.Net.get_asn_whois">get_asn_whois() (ipwhois.net.Net method)</a>
   </dt>
 
       
@@ -232,25 +220,15 @@
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois.get_host">get_host() (ipwhois.ipwhois.IPWhois method)</a>
+  <dt><a href="ipwhois.html#ipwhois.net.Net.get_host">get_host() (ipwhois.net.Net method)</a>
   </dt>
 
       
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois.get_rws">get_rws() (ipwhois.ipwhois.IPWhois method)</a>
+  <dt><a href="ipwhois.html#ipwhois.net.Net.get_http_json">get_http_json() (ipwhois.net.Net method)</a>
   </dt>
 
       
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois.get_whois">get_whois() (ipwhois.ipwhois.IPWhois method)</a>
-  </dt>
-
-  </dl></td>
-</tr></table>
-
-<h2 id="H">H</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.HostLookupError">HostLookupError</a>
+  <dt><a href="ipwhois.html#ipwhois.net.Net.get_whois">get_whois() (ipwhois.net.Net method)</a>
   </dt>
 
   </dl></td>
@@ -259,10 +237,6 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.IPDefinedError">IPDefinedError</a>
-  </dt>
-
       
   <dt><a href="ipwhois.html#ipwhois.utils.ipv4_is_defined">ipv4_is_defined() (in module ipwhois.utils)</a>
   </dt>
@@ -275,8 +249,6 @@
   <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois">IPWhois (class in ipwhois.ipwhois)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="ipwhois.html#module-ipwhois">ipwhois (module)</a>
   </dt>
@@ -285,8 +257,22 @@
   <dt><a href="ipwhois.html#module-ipwhois.ipwhois">ipwhois.ipwhois (module)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="ipwhois.html#module-ipwhois.net">ipwhois.net (module)</a>
+  </dt>
+
+      
+  <dt><a href="ipwhois.html#module-ipwhois.rdap">ipwhois.rdap (module)</a>
+  </dt>
+
       
   <dt><a href="ipwhois.html#module-ipwhois.utils">ipwhois.utils (module)</a>
+  </dt>
+
+      
+  <dt><a href="ipwhois.html#module-ipwhois.whois">ipwhois.whois (module)</a>
   </dt>
 
   </dl></td>
@@ -299,10 +285,44 @@
   <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois.lookup">lookup() (ipwhois.ipwhois.IPWhois method)</a>
   </dt>
 
+      <dd><dl>
+        
+  <dt><a href="ipwhois.html#ipwhois.rdap.RDAP.lookup">(ipwhois.rdap.RDAP method)</a>
+  </dt>
+
+        
+  <dt><a href="ipwhois.html#ipwhois.whois.Whois.lookup">(ipwhois.whois.Whois method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="ipwhois.html#ipwhois.net.Net.lookup_asn">lookup_asn() (ipwhois.net.Net method)</a>
+  </dt>
+
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois.lookup_rws">lookup_rws() (ipwhois.ipwhois.IPWhois method)</a>
+  <dt><a href="ipwhois.html#ipwhois.ipwhois.IPWhois.lookup_rdap">lookup_rdap() (ipwhois.ipwhois.IPWhois method)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="ipwhois.html#ipwhois.net.Net">Net (class in ipwhois.net)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="ipwhois.html#ipwhois.rdap.RDAP">RDAP (class in ipwhois.rdap)</a>
   </dt>
 
   </dl></td>
@@ -328,7 +348,7 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="ipwhois.html#ipwhois.ipwhois.WhoisLookupError">WhoisLookupError</a>
+  <dt><a href="ipwhois.html#ipwhois.whois.Whois">Whois (class in ipwhois.whois)</a>
   </dt>
 
   </dl></td>
@@ -365,7 +385,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.10.2',
+            VERSION:'0.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

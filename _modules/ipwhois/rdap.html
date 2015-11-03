@@ -1,0 +1,1037 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ipwhois.rdap &mdash; ipwhois 0.11.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ipwhois 0.11.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ipwhois
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Readme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#links">Links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#github">Github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#pypi">Pypi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#usage-examples">Usage Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#rdap-http">RDAP (HTTP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#use-a-proxy">Use a proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#legacy-whois">Legacy Whois</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#id1">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#utilities">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#installing">Installing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#id2">RDAP (HTTP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#upgrading-from-0-10-to-0-11">Upgrading from 0.10 to 0.11</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#legacy-whois-parsing">Legacy Whois Parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#country-codes">Country Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#ip-reputation-support">IP Reputation Support?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#domain-support">Domain Support?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#special-thanks">Special Thanks</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">License</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGES.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id1">0.11.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id2">0.10.3 (2015-08-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id3">0.10.2 (2015-05-19)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id4">0.10.1 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id5">0.10.0 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id6">0.9.1 (2014-10-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id7">0.9.0 (2014-07-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id8">0.8.2 (2014-05-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id9">0.8.1 (2014-03-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id10">0.8.0 (2014-02-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id11">0.7.0 (2014-01-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id12">0.6.0 (2014-01-13)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGES.old.html">Changelog (Archive)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id1">0.5.2 (2013-12-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id2">0.5.1 (2013-12-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id3">0.5.0 (2013-11-20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id4">0.4.0 (2013-10-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id5">0.3.0 (2013-09-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id6">0.2.1 (2013-09-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id7">0.2.0 (2013-09-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id8">0.1.9 (2013-09-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id9">0.1.8 (2013-09-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id10">0.1.7 (2013-09-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id11">0.1.6 (2013-09-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id12">0.1.5 (2013-09-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id13">0.1.4 (2013-09-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id14">0.1.3 (2013-09-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id15">0.1.2 (2013-09-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id16">0.1.1 (2013-09-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.old.html#id17">0.1.0 (2013-09-06)</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ipwhois</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>ipwhois.rdap</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for ipwhois.rdap</h1><div class="highlight"><pre>
+<span class="c"># Copyright (c) 2013, 2014, 2015 Philip Hane</span>
+<span class="c"># All rights reserved.</span>
+<span class="c">#</span>
+<span class="c"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c"># modification, are permitted provided that the following conditions are met:</span>
+<span class="c">#</span>
+<span class="c"># 1. Redistributions of source code must retain the above copyright notice,</span>
+<span class="c">#    this list of conditions and the following disclaimer.</span>
+<span class="c"># 2. Redistributions in binary form must reproduce the above copyright notice,</span>
+<span class="c">#    this list of conditions and the following disclaimer in the documentation</span>
+<span class="c">#    and/or other materials provided with the distribution.</span>
+<span class="c">#</span>
+<span class="c"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span>
+<span class="c"># AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<span class="c"># IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span>
+<span class="c"># ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</span>
+<span class="c"># LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span>
+<span class="c"># CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span>
+<span class="c"># SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span>
+<span class="c"># INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span>
+<span class="c"># CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span>
+<span class="c"># ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span>
+<span class="c"># POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Net</span><span class="p">,</span> <span class="n">NetError</span><span class="p">,</span> <span class="n">InvalidEntityContactObject</span><span class="p">,</span> <span class="n">InvalidNetworkObject</span><span class="p">,</span>
+               <span class="n">InvalidEntityObject</span><span class="p">,</span> <span class="n">HTTPLookupError</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">unique_everseen</span>
+<span class="kn">from</span> <span class="nn">.net</span> <span class="kn">import</span> <span class="n">ip_address</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="n">BOOTSTRAP_URL</span> <span class="o">=</span> <span class="s">&#39;http://rdap.arin.net/bootstrap&#39;</span>
+
+<span class="n">RIR_RDAP</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;arin&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;ip_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.arin.net/registry/ip/{0}&#39;</span><span class="p">,</span>
+        <span class="s">&#39;entity_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.arin.net/registry/entity/{0}&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&#39;ripencc&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;ip_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.db.ripe.net/ip/{0}&#39;</span><span class="p">,</span>
+        <span class="s">&#39;entity_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.db.ripe.net/entity/{0}&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&#39;apnic&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;ip_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.apnic.net/ip/{0}&#39;</span><span class="p">,</span>
+        <span class="s">&#39;entity_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.apnic.net/entity/{0}&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&#39;lacnic&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;ip_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.lacnic.net/rdap/ip/{0}&#39;</span><span class="p">,</span>
+        <span class="s">&#39;entity_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.lacnic.net/rdap/entity/{0}&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&#39;afrinic&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;ip_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.afrinic.net/rdap/ip/{0}&#39;</span><span class="p">,</span>
+        <span class="s">&#39;entity_url&#39;</span><span class="p">:</span> <span class="s">&#39;http://rdap.afrinic.net/rdap/entity/{0}&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">class</span> <span class="nc">_RDAPContact</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for parsing RDAP entity contact information objects:</span>
+<span class="sd">    https://tools.ietf.org/html/rfc7483#section-5.1</span>
+<span class="sd">    https://tools.ietf.org/html/rfc7095</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        vcard: The vcard list from an RDAP IP address query.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        InvalidEntityContactObject: vcard is not an RDAP entity contact</span>
+<span class="sd">            information object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vcard</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vcard</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+
+            <span class="k">raise</span> <span class="n">InvalidEntityContactObject</span><span class="p">(</span><span class="s">&#39;JSON result must be a list.&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vcard</span> <span class="o">=</span> <span class="n">vcard</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;kind&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;address&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;phone&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;email&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;role&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="bp">None</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">_parse_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the vcard name.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            val: The value to parse.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_parse_kind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the vcard kind.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            val: The value to parse.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;kind&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_parse_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the vcard address.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            val: The value to parse.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="bp">None</span>
+        <span class="p">}</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">ret</span><span class="p">[</span><span class="s">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">ret</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">&#39;label&#39;</span><span class="p">]</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+            <span class="n">ret</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;address&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;address&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;address&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_parse_phone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the vcard phone numbers.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            val: The value to parse.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="bp">None</span>
+        <span class="p">}</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">ret</span><span class="p">[</span><span class="s">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+        <span class="n">ret</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;phone&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;phone&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;phone&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_parse_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the vcard email addresses.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            val: The value to parse.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;value&#39;</span><span class="p">:</span> <span class="bp">None</span>
+        <span class="p">}</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">ret</span><span class="p">[</span><span class="s">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+        <span class="n">ret</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;email&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;email&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_parse_role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the vcard role.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            val: The value to parse.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;role&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_parse_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the vcard title.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            val: The value to parse.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the vcard to the vars dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">keys</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;fn&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_name</span><span class="p">,</span>
+            <span class="s">&#39;kind&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_kind</span><span class="p">,</span>
+            <span class="s">&#39;adr&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_address</span><span class="p">,</span>
+            <span class="s">&#39;tel&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_phone</span><span class="p">,</span>
+            <span class="s">&#39;email&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_email</span><span class="p">,</span>
+            <span class="s">&#39;role&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_role</span><span class="p">,</span>
+            <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_title</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vcard</span><span class="p">:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="n">parser</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">parser</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">_RDAPCommon</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The common class for parsing RDAP objects:</span>
+<span class="sd">    https://tools.ietf.org/html/rfc7483#section-5</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        json_result: The JSON response from an RDAP query.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: vcard is not a known RDAP object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_result</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">json_result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+
+            <span class="k">raise</span> <span class="ne">ValueError</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">json</span> <span class="o">=</span> <span class="n">json_result</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;handle&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;status&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;remarks&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;notices&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;links&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;events&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;raw&#39;</span><span class="p">:</span> <span class="bp">None</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">summarize_links</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">links_json</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for summarizing RDAP links in to a unique list.</span>
+<span class="sd">        https://tools.ietf.org/html/rfc7483#section-4.2</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            links_json: A json dictionary of links from RDAP results.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List: A unique list of found RDAP link dictionaries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">link_dict</span> <span class="ow">in</span> <span class="n">links_json</span><span class="p">:</span>
+
+            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link_dict</span><span class="p">[</span><span class="s">&#39;href&#39;</span><span class="p">])</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">unique_everseen</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">summarize_notices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">notices_json</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for summarizing RDAP notices in to a unique list.</span>
+<span class="sd">        https://tools.ietf.org/html/rfc7483#section-4.3</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            notices_json: A json dictionary of notices from RDAP results.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List: A unique list of found RDAP notices dictionaries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">notices_dict</span> <span class="ow">in</span> <span class="n">notices_json</span><span class="p">:</span>
+
+            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="n">notices_dict</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">],</span>
+                <span class="s">&#39;description&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notices_dict</span><span class="p">[</span><span class="s">&#39;description&#39;</span><span class="p">])</span>
+            <span class="p">})</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="n">ret</span><span class="p">[</span><span class="s">&#39;links&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">summarize_links</span><span class="p">(</span><span class="n">notices_dict</span><span class="p">[</span><span class="s">&#39;links&#39;</span><span class="p">])</span>
+
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">summarize_events</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">events_json</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for summarizing RDAP events in to a unique list.</span>
+<span class="sd">        https://tools.ietf.org/html/rfc7483#section-4.5</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            events_json: A json dictionary of events from RDAP results.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List: A unique list of found RDAP events dictionaries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">events_json</span><span class="p">:</span>
+
+            <span class="n">event_dict</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">&#39;action&#39;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s">&#39;eventAction&#39;</span><span class="p">],</span>
+                <span class="s">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s">&#39;eventDate&#39;</span><span class="p">],</span>
+                <span class="s">&#39;actor&#39;</span><span class="p">:</span> <span class="bp">None</span>
+            <span class="p">}</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="n">event_dict</span><span class="p">[</span><span class="s">&#39;actor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s">&#39;eventActor&#39;</span><span class="p">]</span>
+
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event_dict</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">_parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the JSON response to the vars dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;status&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;status&#39;</span><span class="p">]</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+            <span class="k">pass</span>
+
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;remarks&#39;</span><span class="p">,</span> <span class="s">&#39;notices&#39;</span><span class="p">]:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">summarize_notices</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;links&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">summarize_links</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;links&#39;</span><span class="p">])</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+            <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">summarize_events</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;events&#39;</span><span class="p">])</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+            <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">_RDAPNetwork</span><span class="p">(</span><span class="n">_RDAPCommon</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for parsing RDAP network objects:</span>
+<span class="sd">    https://tools.ietf.org/html/rfc7483#section-5.4</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        json_result: The JSON response from an RDAP IP address query.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        InvalidNetworkObject: json_result is not an RDAP network object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_result</span><span class="p">):</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">_RDAPCommon</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_result</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+            <span class="k">raise</span> <span class="n">InvalidNetworkObject</span><span class="p">(</span><span class="s">&#39;JSON result must be a dict.&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="s">&#39;start_address&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;end_address&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;ip_version&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;parent_handle&#39;</span><span class="p">:</span> <span class="bp">None</span>
+        <span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the JSON response to the vars dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+
+            <span class="k">raise</span> <span class="n">InvalidNetworkObject</span><span class="p">(</span><span class="s">&#39;Handle is missing for RDAP network &#39;</span>
+                                       <span class="s">&#39;object&#39;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;ip_version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;ipVersion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="c"># RDAP IPv4 addresses are padded to 3 digits per octet, remove</span>
+            <span class="c"># the leading 0&#39;s.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;ip_version&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;v4&#39;</span><span class="p">:</span>
+
+                <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;startAddress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+                    <span class="n">obj</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s">&#39;0&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">]:</span>
+                        <span class="n">obj</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;start_address&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ip_address</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                                                        <span class="p">)</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span>
+
+                <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;endAddress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+                    <span class="n">obj</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s">&#39;0&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">]:</span>
+                        <span class="n">obj</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;end_address&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ip_address</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span>
+
+            <span class="c"># No bugs found for IPv6 yet, proceed as normal.</span>
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;start_address&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;startAddress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;end_address&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;endAddress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;IP address data incomplete. Data parsed prior to &#39;</span>
+                      <span class="s">&#39;exception: {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="n">InvalidNetworkObject</span><span class="p">(</span><span class="s">&#39;IP address data is missing for RDAP &#39;</span>
+                                       <span class="s">&#39;network object.&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;type&#39;</span><span class="p">,</span> <span class="s">&#39;country&#39;</span><span class="p">]:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;parent_handle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;parentHandle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+
+            <span class="k">pass</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parse</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">_RDAPEntity</span><span class="p">(</span><span class="n">_RDAPCommon</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for parsing RDAP entity objects:</span>
+<span class="sd">    https://tools.ietf.org/html/rfc7483#section-5.1</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        json_result: The JSON response from an RDAP query.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        InvalidEntityObject: json_result is not an RDAP entity object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_result</span><span class="p">):</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">_RDAPCommon</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_result</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+            <span class="k">raise</span> <span class="n">InvalidEntityObject</span><span class="p">(</span><span class="s">&#39;JSON result must be a dict.&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="s">&#39;roles&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;contact&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;events_actor&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;entities&#39;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for parsing the JSON response to the vars dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+            <span class="k">raise</span> <span class="n">InvalidEntityObject</span><span class="p">(</span><span class="s">&#39;Handle is missing for RDAP entity&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;roles&#39;</span><span class="p">,</span> <span class="s">&#39;country&#39;</span><span class="p">]:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+
+                <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">vcard</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;vcardArray&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">_RDAPContact</span><span class="p">(</span><span class="n">vcard</span><span class="p">)</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;contact&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">vars</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+            <span class="k">pass</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]:</span>
+
+                <span class="k">if</span> <span class="n">ent</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]:</span>
+
+                    <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ent</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">])</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+
+            <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parse</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="RDAP"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.rdap.RDAP">[docs]</a><span class="k">class</span> <span class="nc">RDAP</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for parsing IP address whois information via RDAP:</span>
+<span class="sd">    https://tools.ietf.org/html/rfc7483</span>
+<span class="sd">    https://www.arin.net/resources/rdap.html</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        net: A ipwhois.net.Net object.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        NetError: The parameter provided is not an instance of</span>
+<span class="sd">            ipwhois.net.Net</span>
+<span class="sd">        IPDefinedError: The address provided is defined (does not need to be</span>
+<span class="sd">            resolved).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">net</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">Net</span><span class="p">):</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_net</span> <span class="o">=</span> <span class="n">net</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="k">raise</span> <span class="n">NetError</span><span class="p">(</span><span class="s">&#39;The provided net parameter is not an instance of &#39;</span>
+                           <span class="s">&#39;ipwhois.net.Net&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RDAP.lookup"><a class="viewcode-back" href="../../ipwhois.html#ipwhois.rdap.RDAP.lookup">[docs]</a>    <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inc_raw</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">retry_count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">asn_data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+               <span class="n">excluded_entities</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bootstrap</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The function for retrieving and parsing information for an IP</span>
+<span class="sd">        address via RDAP (HTTP).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            inc_raw: Boolean for whether to include the raw results in the</span>
+<span class="sd">                returned dictionary.</span>
+<span class="sd">            retry_count: The number of times to retry in case socket errors,</span>
+<span class="sd">                timeouts, connection resets, etc. are encountered.</span>
+<span class="sd">            asn_data: Result dictionary from ipwhois.net.Net.lookup_asn().</span>
+<span class="sd">                May be optional in the future when utilizing RDAP bootstrap.</span>
+<span class="sd">            depth: How many levels deep to run queries when additional</span>
+<span class="sd">                referenced objects are found.</span>
+<span class="sd">            excluded_entities: A list of entity handles to not perform lookups.</span>
+<span class="sd">            response: Optional response object, this bypasses the RDAP lookup.</span>
+<span class="sd">            bootstrap: If True, performs lookups via ARIN bootstrap rather</span>
+<span class="sd">                than lookups based on ASN data.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dictionary:</span>
+
+<span class="sd">            :query: The IP address (String)</span>
+<span class="sd">            :network: Dictionary of values returned by _RDAPNetwork. The raw</span>
+<span class="sd">                result is included for each entity if the inc_raw parameter is</span>
+<span class="sd">                True.</span>
+<span class="sd">            :entities: List of entity keys referenced by the top level IP</span>
+<span class="sd">                address query.</span>
+<span class="sd">            :objects: Dictionary of objects with the handles as keys, and the</span>
+<span class="sd">                dictionary returned by _RDAPEntity, etc as the values. The raw</span>
+<span class="sd">                result is included for each object if the inc_raw parameter is</span>
+<span class="sd">                True.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">excluded_entities</span><span class="p">:</span>
+
+            <span class="n">excluded_entities</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c"># Create the return dictionary.</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;query&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">address_str</span><span class="p">,</span>
+            <span class="s">&#39;network&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;entities&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;objects&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+            <span class="s">&#39;raw&#39;</span><span class="p">:</span> <span class="bp">None</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">bootstrap</span><span class="p">:</span>
+
+            <span class="n">ip_url</span> <span class="o">=</span> <span class="s">&#39;{0}/ip/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">BOOTSTRAP_URL</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">address_str</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">ip_url</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">RIR_RDAP</span><span class="p">[</span><span class="n">asn_data</span><span class="p">[</span><span class="s">&#39;asn_registry&#39;</span><span class="p">]][</span><span class="s">&#39;ip_url&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">address_str</span><span class="p">)</span>
+
+        <span class="c"># Only fetch the response if we haven&#39;t already.</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Response not given, perform RDAP lookup for {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">ip_url</span><span class="p">))</span>
+
+            <span class="c"># Retrieve the whois data.</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">get_http_json</span><span class="p">(</span>
+                <span class="n">ip_url</span><span class="p">,</span> <span class="n">retry_count</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">inc_raw</span><span class="p">:</span>
+
+            <span class="n">results</span><span class="p">[</span><span class="s">&#39;raw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span>
+
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Parsing RDAP network object&#39;</span><span class="p">)</span>
+        <span class="n">result_net</span> <span class="o">=</span> <span class="n">_RDAPNetwork</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="n">result_net</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+        <span class="n">results</span><span class="p">[</span><span class="s">&#39;network&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result_net</span><span class="o">.</span><span class="n">vars</span>
+        <span class="n">results</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">results</span><span class="p">[</span><span class="s">&#39;objects&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c"># Iterate through and parse the root level entities.</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Parsing RDAP root level entities&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]:</span>
+
+            <span class="k">if</span> <span class="n">ent</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">results</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">],</span> <span class="n">excluded_entities</span><span class="p">]:</span>
+
+                <span class="n">result_ent</span> <span class="o">=</span> <span class="n">_RDAPEntity</span><span class="p">(</span><span class="n">ent</span><span class="p">)</span>
+                <span class="n">result_ent</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+
+                <span class="n">results</span><span class="p">[</span><span class="s">&#39;objects&#39;</span><span class="p">][</span><span class="n">ent</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">result_ent</span><span class="o">.</span><span class="n">vars</span>
+
+                <span class="n">results</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ent</span><span class="p">[</span><span class="s">&#39;handle&#39;</span><span class="p">])</span>
+
+        <span class="c"># Iterate through to the defined depth, retrieving and parsing all</span>
+        <span class="c"># unique entities.</span>
+        <span class="n">temp_objects</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;objects&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">depth</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_objects</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Parsing RDAP sub-entities to depth: {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">depth</span><span class="p">))</span>
+
+        <span class="k">while</span> <span class="n">depth</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_objects</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+            <span class="n">new_objects</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">temp_objects</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+
+                <span class="k">try</span><span class="p">:</span>
+
+                    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">[</span><span class="s">&#39;entities&#39;</span><span class="p">]:</span>
+
+                        <span class="k">if</span> <span class="n">ent</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s">&#39;objects&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span>
+                                       <span class="nb">list</span><span class="p">(</span><span class="n">new_objects</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span>
+                                       <span class="n">excluded_entities</span><span class="p">):</span>
+
+                            <span class="k">if</span> <span class="n">bootstrap</span><span class="p">:</span>
+
+                                <span class="n">entity_url</span> <span class="o">=</span> <span class="s">&#39;{0}/entity/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                    <span class="n">BOOTSTRAP_URL</span><span class="p">,</span> <span class="n">ent</span><span class="p">)</span>
+
+                            <span class="k">else</span><span class="p">:</span>
+
+                                <span class="n">entity_url</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">RIR_RDAP</span><span class="p">[</span><span class="n">asn_data</span><span class="p">[</span>
+                                    <span class="s">&#39;asn_registry&#39;</span><span class="p">]][</span><span class="s">&#39;entity_url&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ent</span><span class="p">)</span>
+
+                            <span class="k">try</span><span class="p">:</span>
+
+                                <span class="c"># RDAP entity query</span>
+                                <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_net</span><span class="o">.</span><span class="n">get_http_json</span><span class="p">(</span>
+                                    <span class="n">entity_url</span><span class="p">,</span> <span class="n">retry_count</span>
+                                <span class="p">)</span>
+
+                                <span class="c"># Parse the entity</span>
+                                <span class="n">result_ent</span> <span class="o">=</span> <span class="n">_RDAPEntity</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+                                <span class="n">result_ent</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+                                <span class="n">new_objects</span><span class="p">[</span><span class="n">ent</span><span class="p">]</span> <span class="o">=</span> <span class="n">result_ent</span><span class="o">.</span><span class="n">vars</span>
+
+                                <span class="k">if</span> <span class="n">inc_raw</span><span class="p">:</span>
+
+                                    <span class="n">new_objects</span><span class="p">[</span><span class="n">ent</span><span class="p">][</span><span class="s">&#39;raw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span>
+
+                            <span class="k">except</span> <span class="p">(</span><span class="n">HTTPLookupError</span><span class="p">,</span> <span class="n">InvalidEntityObject</span><span class="p">):</span>
+
+                                <span class="k">pass</span>
+
+                <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+                    <span class="k">pass</span>
+
+            <span class="c"># Update the result objects, and set the new temp object list to</span>
+            <span class="c"># iterate for the next depth of entities.</span>
+            <span class="n">results</span><span class="p">[</span><span class="s">&#39;objects&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_objects</span><span class="p">)</span>
+            <span class="n">temp_objects</span> <span class="o">=</span> <span class="n">new_objects</span>
+            <span class="n">depth</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">results</span></div></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Philip Hane.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

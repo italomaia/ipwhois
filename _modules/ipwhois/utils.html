@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ipwhois.utils &mdash; ipwhois 0.10.2 documentation</title>
+  <title>ipwhois.utils &mdash; ipwhois 0.11.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="ipwhois 0.10.2 documentation" href="../../index.html"/>
+    <link rel="top" title="ipwhois 0.11.0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   
@@ -75,24 +75,37 @@
 <li class="toctree-l2"><a class="reference internal" href="../../README.html#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../README.html#links">Links</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../README.html#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#examples">Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../README.html#github">Github</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../README.html#pypi">Pypi</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../README.html#usage-examples">Usage Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../README.html#typical-usage">Typical usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../README.html#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../README.html#use-a-proxy">Use a proxy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#rdap-http">RDAP (HTTP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#use-a-proxy">Use a proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#legacy-whois">Legacy Whois</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#id1">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#utilities">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../README.html#installing">Installing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../README.html#parsing">Parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../README.html#rest-http">REST (HTTP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#id2">RDAP (HTTP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../README.html#upgrading-from-0-10-to-0-11">Upgrading from 0.10 to 0.11</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html#legacy-whois-parsing">Legacy Whois Parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../README.html#country-codes">Country Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../README.html#ip-reputation-support">IP Reputation Support?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../README.html#domain-support">Domain Support?</a></li>
@@ -105,16 +118,18 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../CHANGES.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id1">0.10.2 (2015-05-19)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id2">0.10.1 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id3">0.10.0 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id4">0.9.1 (2014-10-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id5">0.9.0 (2014-07-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id6">0.8.2 (2014-05-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id7">0.8.1 (2014-03-05)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id8">0.8.0 (2014-02-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id9">0.7.0 (2014-01-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id10">0.6.0 (2014-01-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id1">0.11.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id2">0.10.3 (2015-08-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id3">0.10.2 (2015-05-19)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id4">0.10.1 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id5">0.10.0 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id6">0.9.1 (2014-10-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id7">0.9.0 (2014-07-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id8">0.8.2 (2014-05-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id9">0.8.1 (2014-03-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id10">0.8.0 (2014-02-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id11">0.7.0 (2014-01-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CHANGES.html#id12">0.6.0 (2014-01-13)</a></li>
 </ul>
 </li>
 </ul>
@@ -202,6 +217,13 @@
 <span class="c"># POSSIBILITY OF SUCH DAMAGE.</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">xml.dom.minidom</span> <span class="kn">import</span> <span class="n">parseString</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">ipaddress</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ip_address</span><span class="p">,</span>
@@ -216,18 +238,39 @@
                         <span class="n">IPv4Network</span><span class="p">,</span>
                         <span class="n">IPv6Address</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">xml.dom.minidom</span> <span class="kn">import</span> <span class="n">parseString</span>
-<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">copy</span>
-<span class="kn">import</span> <span class="nn">io</span>
-<span class="kn">import</span> <span class="nn">csv</span>
-
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">filterfalse</span>
 
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">ifilterfalse</span> <span class="k">as</span> <span class="n">filterfalse</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="n">IETF_RFC_REFERENCES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c"># IPv4</span>
+    <span class="s">&#39;RFC 1122, Section 3.2.1.3&#39;</span><span class="p">:</span>
+    <span class="s">&#39;http://tools.ietf.org/html/rfc1122#section-3.2.1.3&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 1918&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc1918&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 3927&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc3927&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 5736&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc5736&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 5737&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc5737&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 3068&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc3068&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 2544&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc2544&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 3171&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc3171&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 919, Section 7&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc919#section-7&#39;</span><span class="p">,</span>
+    <span class="c"># IPv6</span>
+    <span class="s">&#39;RFC 4291, Section 2.7&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc4291#section-2.7&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 4291&#39;</span><span class="p">:</span> <span class="s">&#39;http://tools.ietf.org/html/rfc4291&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 4291, Section 2.5.2&#39;</span><span class="p">:</span>
+    <span class="s">&#39;http://tools.ietf.org/html/rfc4291#section-2.5.2&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 4291, Section 2.5.3&#39;</span><span class="p">:</span>
+    <span class="s">&#39;http://tools.ietf.org/html/rfc4291#section-2.5.3&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 4291, Section 2.5.6&#39;</span><span class="p">:</span>
+    <span class="s">&#39;http://tools.ietf.org/html/rfc4291#section-2.5.6&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 4291, Section 2.5.7&#39;</span><span class="p">:</span>
+    <span class="s">&#39;http://tools.ietf.org/html/rfc4291#section-2.5.7&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RFC 4193&#39;</span><span class="p">:</span> <span class="s">&#39;https://tools.ietf.org/html/rfc4193&#39;</span>
+<span class="p">}</span>
 
 <span class="n">IP_REGEX</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s">r&#39;(?P&lt;ip&gt;&#39;</span>
@@ -287,6 +330,9 @@
 
     <span class="k">if</span> <span class="n">is_legacy_xml</span><span class="p">:</span>
 
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Opening country code legacy XML: {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/data/iso_3166-1_list_en.xml&#39;</span><span class="p">))</span>
+
         <span class="c"># Create the country codes file object.</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/data/iso_3166-1_list_en.xml&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span>
                     <span class="n">encoding</span><span class="o">=</span><span class="s">&#39;ISO-8859-1&#39;</span><span class="p">)</span>
@@ -318,6 +364,9 @@
             <span class="n">countries</span><span class="p">[</span><span class="n">code</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
 
     <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Opening country code CSV: {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/data/iso_3166-1_list_en.xml&#39;</span><span class="p">))</span>
 
         <span class="c"># Create the country codes file object.</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/data/iso_3166-1.csv&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span>
@@ -552,6 +601,9 @@
     <span class="n">file_data</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="k">if</span> <span class="n">file_path</span><span class="p">:</span>
 
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Opening file for unique address analysis: {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">)))</span>
+
         <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
 
         <span class="c"># Read the file.</span>
@@ -563,6 +615,8 @@
     <span class="p">)</span>
 
     <span class="c"># Check if there is data.</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Analyzing input/file data&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">)))</span>
     <span class="k">for</span> <span class="n">input_data</span> <span class="ow">in</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">file_data</span><span class="p">]:</span>
 
         <span class="k">if</span> <span class="n">input_data</span><span class="p">:</span>
@@ -658,7 +712,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.10.2',
+            VERSION:'0.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

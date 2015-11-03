@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Library Structure &mdash; ipwhois 0.10.2 documentation</title>
+  <title>Library Structure &mdash; ipwhois 0.11.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="ipwhois 0.10.2 documentation" href="index.html"/> 
+    <link rel="top" title="ipwhois 0.11.0 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -74,24 +74,37 @@
 <li class="toctree-l2"><a class="reference internal" href="README.html#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#links">Links</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="README.html#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#examples">Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="README.html#github">Github</a></li>
 <li class="toctree-l3"><a class="reference internal" href="README.html#pypi">Pypi</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#usage-examples">Usage Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="README.html#typical-usage">Typical usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#whois-lookup-via-http-rest">Whois lookup via HTTP (REST)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#use-a-proxy">Use a proxy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#rdap-http">RDAP (HTTP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#use-a-proxy">Use a proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#legacy-whois">Legacy Whois</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#id1">Basic usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#multiple-networks-listed-and-referral-whois">Multiple networks listed and referral whois</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#utilities">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#retrieve-host-information-for-an-ip-address">Retrieve host information for an IP address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#retrieve-the-official-country-name-for-an-iso-3166-1-country-code">Retrieve the official country name for an ISO 3166-1 country code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#parse-out-ip-addresses-and-ports-from-text-or-a-file">Parse out IP addresses and ports from text or a file</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#installing">Installing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#parsing">Parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#rest-http">REST (HTTP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#id2">RDAP (HTTP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#upgrading-from-0-10-to-0-11">Upgrading from 0.10 to 0.11</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#legacy-whois-parsing">Legacy Whois Parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#country-codes">Country Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#ip-reputation-support">IP Reputation Support?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#domain-support">Domain Support?</a></li>
@@ -104,16 +117,18 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CHANGES.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id1">0.10.2 (2015-05-19)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id2">0.10.1 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id3">0.10.0 (2015-02-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id4">0.9.1 (2014-10-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id5">0.9.0 (2014-07-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id6">0.8.2 (2014-05-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id7">0.8.1 (2014-03-05)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id8">0.8.0 (2014-02-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id9">0.7.0 (2014-01-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id10">0.6.0 (2014-01-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id1">0.11.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id2">0.10.3 (2015-08-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id3">0.10.2 (2015-05-19)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id4">0.10.1 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id5">0.10.0 (2015-02-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id6">0.9.1 (2014-10-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id7">0.9.0 (2014-07-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id8">0.8.2 (2014-05-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id9">0.8.1 (2014-03-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id10">0.8.0 (2014-02-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id11">0.7.0 (2014-01-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CHANGES.html#id12">0.6.0 (2014-01-13)</a></li>
 </ul>
 </li>
 </ul>
@@ -175,47 +190,16 @@
             
   <div class="section" id="module-ipwhois">
 <span id="library-structure"></span><h1>Library Structure<a class="headerlink" href="#module-ipwhois" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-ipwhois.ipwhois"></span><dl class="exception">
-<dt id="ipwhois.ipwhois.ASNLookupError">
-<em class="property">exception </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">ASNLookupError</code><a class="reference internal" href="_modules/ipwhois/ipwhois.html#ASNLookupError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.ASNLookupError" title="Permalink to this definition">¶</a></dt>
-<dd><p>An Exception for when the ASN lookup failed.</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="ipwhois.ipwhois.ASNRegistryError">
-<em class="property">exception </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">ASNRegistryError</code><a class="reference internal" href="_modules/ipwhois/ipwhois.html#ASNRegistryError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.ASNRegistryError" title="Permalink to this definition">¶</a></dt>
-<dd><p>An Exception for when the ASN registry does not match one of the five
-expected values (arin, ripencc, apnic, lacnic, afrinic).</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="ipwhois.ipwhois.BlacklistError">
-<em class="property">exception </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">BlacklistError</code><a class="reference internal" href="_modules/ipwhois/ipwhois.html#BlacklistError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.BlacklistError" title="Permalink to this definition">¶</a></dt>
-<dd><p>An Exception for when the server is in a blacklist.</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="ipwhois.ipwhois.HostLookupError">
-<em class="property">exception </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">HostLookupError</code><a class="reference internal" href="_modules/ipwhois/ipwhois.html#HostLookupError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.HostLookupError" title="Permalink to this definition">¶</a></dt>
-<dd><p>An Exception for when the host lookup failed.</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="ipwhois.ipwhois.IPDefinedError">
-<em class="property">exception </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">IPDefinedError</code><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPDefinedError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPDefinedError" title="Permalink to this definition">¶</a></dt>
-<dd><p>An Exception for when the IP is defined (does not need to be resolved).</p>
-</dd></dl>
-
-<dl class="class">
+<span class="target" id="module-ipwhois.ipwhois"></span><dl class="class">
 <dt id="ipwhois.ipwhois.IPWhois">
 <em class="property">class </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">IPWhois</code><span class="sig-paren">(</span><em>address</em>, <em>timeout=5</em>, <em>proxy_opener=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois" title="Permalink to this definition">¶</a></dt>
-<dd><p>The class for performing ASN/whois lookups and parsing for IPv4 and IPv6
-addresses.</p>
+<dd><p>The wrapper class for performing whois/RDAP lookups and parsing for
+IPv4 and IPv6 addresses.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>address</strong> &#8211; An IPv4 or IPv6 address as a string, integer, IPv4Address, or
 IPv6Address.</li>
 <li><strong>timeout</strong> &#8211; The default timeout for socket connections in seconds.</li>
@@ -224,7 +208,162 @@ support or None.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#ipwhois.ipwhois.IPDefinedError" title="ipwhois.ipwhois.IPDefinedError"><code class="xref py py-exc docutils literal"><span class="pre">IPDefinedError</span></code></a> &#8211;
+</tbody>
+</table>
+<dl class="method">
+<dt id="ipwhois.ipwhois.IPWhois.lookup">
+<code class="descname">lookup</code><span class="sig-paren">(</span><em>inc_raw=False</em>, <em>retry_count=3</em>, <em>get_referral=False</em>, <em>extra_blacklist=None</em>, <em>ignore_referral_errors=False</em>, <em>field_list=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.lookup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.lookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function for retrieving and parsing whois information for an IP
+address via port 43 (WHOIS).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inc_raw</strong> &#8211; Boolean for whether to include the raw whois results in
+the returned dictionary.</li>
+<li><strong>retry_count</strong> &#8211; The number of times to retry in case socket errors,
+timeouts, connection resets, etc. are encountered.</li>
+<li><strong>get_referral</strong> &#8211; Boolean for whether to retrieve referral whois
+information, if available.</li>
+<li><strong>extra_blacklist</strong> &#8211; A list of blacklisted whois servers in addition to
+the global BLACKLIST.</li>
+<li><strong>ignore_referral_errors</strong> &#8211; Boolean for whether to ignore and continue
+when an exception is encountered on referral whois lookups.</li>
+<li><strong>field_list</strong> &#8211; If provided, a list of fields to parse:
+[&#8216;name&#8217;, &#8216;handle&#8217;, &#8216;description&#8217;, &#8216;country&#8217;, &#8216;state&#8217;, &#8216;city&#8217;,
+&#8216;address&#8217;, &#8216;postal_code&#8217;, &#8216;emails&#8217;, &#8216;created&#8217;, &#8216;updated&#8217;]</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">query:</th><td class="field-body">The IP address (String)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">asn:</th><td class="field-body">The Autonomous System Number (String)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">asn_date:</th><td class="field-body">The ASN Allocation date (String)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">asn_registry:</th><td class="field-body">The assigned ASN registry (String)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">asn_cidr:</th><td class="field-body">The assigned ASN CIDR (String)</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">asn_country_code:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The assigned ASN country code (String)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">nets:</th><td class="field-body">Dictionaries containing network information which consists
+of the fields listed in the ipwhois.whois.RIR_WHOIS dictionary.
+(List)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">raw:</th><td class="field-body">Raw whois results if the inc_raw parameter is True. (String)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">referral:</th><td class="field-body">Dictionary of referral whois information if get_referral
+is True and the server isn&#8217;t blacklisted. Consists of fields
+listed in the ipwhois.whois.RWHOIS dictionary. Additional
+referral server informaion is added in the server and port
+keys. (Dictionary)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">raw_referral:</th><td class="field-body">Raw referral whois results if the inc_raw parameter
+is True. (String)</td>
+</tr>
+</tbody>
+</table>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ipwhois.ipwhois.IPWhois.lookup_rdap">
+<code class="descname">lookup_rdap</code><span class="sig-paren">(</span><em>inc_raw=False</em>, <em>retry_count=3</em>, <em>depth=0</em>, <em>excluded_entities=None</em>, <em>bootstrap=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.lookup_rdap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.lookup_rdap" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function for retrieving and parsing whois information for an IP
+address via HTTP (RDAP).</p>
+<p><strong>This is now the recommended method, as RDAP contains much better
+information to parse.</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inc_raw</strong> &#8211; Boolean for whether to include the raw whois results in
+the returned dictionary.</li>
+<li><strong>retry_count</strong> &#8211; The number of times to retry in case socket errors,
+timeouts, connection resets, etc. are encountered.</li>
+<li><strong>depth</strong> &#8211; How many levels deep to run queries when additional
+referenced objects are found.</li>
+<li><strong>excluded_entities</strong> &#8211; A list of entity handles to not perform lookups.</li>
+<li><strong>bootstrap</strong> &#8211; If True, performs lookups via ARIN bootstrap rather
+than lookups based on ASN data. ASN lookups are not performed
+and no output for any of the asn* fields is provided.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">query:</th><td class="field-body">The IP address (String)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">asn:</th><td class="field-body">The Autonomous System Number (String)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">asn_date:</th><td class="field-body">The ASN Allocation date (String)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">asn_registry:</th><td class="field-body">The assigned ASN registry (String)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">asn_cidr:</th><td class="field-body">The assigned ASN CIDR (String)</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">asn_country_code:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The assigned ASN country code (String)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">entities:</th><td class="field-body">List of entity handles referred by the top level query.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">network:</th><td class="field-body">Dictionary containing network information which consists
+of the fields listed in the ipwhois.rdap._RDAPNetwork dict.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">objects:</th><td class="field-body">Dictionary of (entity handle: entity dict) which consists
+of the fields listed in the ipwhois.rdap._RDAPEntity dict.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">raw:</th><td class="field-body">(Dictionary) - Whois results in json format if the inc_raw
+parameter is True.</td>
+</tr>
+</tbody>
+</table>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-ipwhois.net"></span><dl class="class">
+<dt id="ipwhois.net.Net">
+<em class="property">class </em><code class="descclassname">ipwhois.net.</code><code class="descname">Net</code><span class="sig-paren">(</span><em>address</em>, <em>timeout=5</em>, <em>proxy_opener=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net" title="Permalink to this definition">¶</a></dt>
+<dd><p>The class for performing network queries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>address</strong> &#8211; An IPv4 or IPv6 address in string format.</li>
+<li><strong>timeout</strong> &#8211; The default timeout for socket connections in seconds.</li>
+<li><strong>proxy_opener</strong> &#8211; The urllib.request.OpenerDirector request for proxy
+support or None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">IPDefinedError</span></code> &#8211;
 The address provided is defined (does not need to be
 resolved).</p>
 </td>
@@ -232,29 +371,31 @@ resolved).</p>
 </tbody>
 </table>
 <dl class="method">
-<dt id="ipwhois.ipwhois.IPWhois.get_asn_dns">
-<code class="descname">get_asn_dns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.get_asn_dns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.get_asn_dns" title="Permalink to this definition">¶</a></dt>
+<dt id="ipwhois.net.Net.get_asn_dns">
+<code class="descname">get_asn_dns</code><span class="sig-paren">(</span><em>result=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net.get_asn_dns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net.get_asn_dns" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function for retrieving ASN information for an IP address from
 Cymru via port 53 (DNS).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A dictionary containing the following keys:
-asn (String) - The Autonomous System Number.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>result</strong> &#8211; Optional result object. This bypasses the ASN lookup.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">asn (String) - The Autonomous System Number.
 asn_date (String) - The ASN Allocation date.
 asn_registry (String) - The assigned ASN registry.
 asn_cidr (String) - The assigned ASN CIDR.
 asn_country_code (String) - The assigned ASN country code.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Dictionary</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Dictionary: A dictionary containing the following keys</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#ipwhois.ipwhois.ASNRegistryError" title="ipwhois.ipwhois.ASNRegistryError"><code class="xref py py-exc docutils literal"><span class="pre">ASNRegistryError</span></code></a> &#8211;
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">ASNRegistryError</span></code> &#8211;
 The ASN registry is not known.</li>
-<li><a class="reference internal" href="#ipwhois.ipwhois.ASNLookupError" title="ipwhois.ipwhois.ASNLookupError"><code class="xref py py-exc docutils literal"><span class="pre">ASNLookupError</span></code></a> &#8211;
+<li><code class="xref py py-exc docutils literal"><span class="pre">ASNLookupError</span></code> &#8211;
 The ASN lookup failed.</li>
 </ul>
 </td>
@@ -264,33 +405,35 @@ The ASN lookup failed.</li>
 </dd></dl>
 
 <dl class="method">
-<dt id="ipwhois.ipwhois.IPWhois.get_asn_whois">
-<code class="descname">get_asn_whois</code><span class="sig-paren">(</span><em>retry_count=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.get_asn_whois"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.get_asn_whois" title="Permalink to this definition">¶</a></dt>
+<dt id="ipwhois.net.Net.get_asn_whois">
+<code class="descname">get_asn_whois</code><span class="sig-paren">(</span><em>retry_count=3</em>, <em>result=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net.get_asn_whois"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net.get_asn_whois" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function for retrieving ASN information for an IP address from
 Cymru via port 43 (WHOIS).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>retry_count</strong> &#8211; The number of times to retry in case socket errors,
-timeouts, connection resets, etc. are encountered.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>retry_count</strong> &#8211; The number of times to retry in case socket errors,
+timeouts, connection resets, etc. are encountered.</li>
+<li><strong>result</strong> &#8211; Optional result object. This bypasses the ASN lookup.</li>
+</ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A dictionary containing the following keys:
-asn (String) - The Autonomous System Number.
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">asn (String) - The Autonomous System Number.
 asn_date (String) - The ASN Allocation date.
 asn_registry (String) - The assigned ASN registry.
 asn_cidr (String) - The assigned ASN CIDR.
 asn_country_code (String) - The assigned ASN country code.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Dictionary</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Dictionary: A dictionary containing the following keys</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#ipwhois.ipwhois.ASNRegistryError" title="ipwhois.ipwhois.ASNRegistryError"><code class="xref py py-exc docutils literal"><span class="pre">ASNRegistryError</span></code></a> &#8211;
+<li><code class="xref py py-exc docutils literal"><span class="pre">ASNRegistryError</span></code> &#8211;
 The ASN registry is not known.</li>
-<li><a class="reference internal" href="#ipwhois.ipwhois.ASNLookupError" title="ipwhois.ipwhois.ASNLookupError"><code class="xref py py-exc docutils literal"><span class="pre">ASNLookupError</span></code></a> &#8211;
+<li><code class="xref py py-exc docutils literal"><span class="pre">ASNLookupError</span></code> &#8211;
 The ASN lookup failed.</li>
 </ul>
 </td>
@@ -300,8 +443,8 @@ The ASN lookup failed.</li>
 </dd></dl>
 
 <dl class="method">
-<dt id="ipwhois.ipwhois.IPWhois.get_host">
-<code class="descname">get_host</code><span class="sig-paren">(</span><em>retry_count=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.get_host"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.get_host" title="Permalink to this definition">¶</a></dt>
+<dt id="ipwhois.net.Net.get_host">
+<code class="descname">get_host</code><span class="sig-paren">(</span><em>retry_count=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net.get_host"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net.get_host" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function for retrieving host information for an IP address.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -314,7 +457,7 @@ timeouts, connection resets, etc. are encountered.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Tuple</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#ipwhois.ipwhois.HostLookupError" title="ipwhois.ipwhois.HostLookupError"><code class="xref py py-exc docutils literal"><span class="pre">HostLookupError</span></code></a> &#8211;
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">HostLookupError</span></code> &#8211;
 The host lookup failed.</td>
 </tr>
 </tbody>
@@ -322,10 +465,9 @@ The host lookup failed.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="ipwhois.ipwhois.IPWhois.get_rws">
-<code class="descname">get_rws</code><span class="sig-paren">(</span><em>url=None</em>, <em>retry_count=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.get_rws"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.get_rws" title="Permalink to this definition">¶</a></dt>
-<dd><p>The function for retrieving Whois-RWS information for an IP address
-via HTTP (Whois-RWS).</p>
+<dt id="ipwhois.net.Net.get_http_json">
+<code class="descname">get_http_json</code><span class="sig-paren">(</span><em>url=None</em>, <em>retry_count=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net.get_http_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net.get_http_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function for retrieving a json result via HTTP.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -337,14 +479,14 @@ timeouts, connection resets, etc. are encountered.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The whois data in Json format.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The data in json format.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Dictionary</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#ipwhois.ipwhois.WhoisLookupError" title="ipwhois.ipwhois.WhoisLookupError"><code class="xref py py-exc docutils literal"><span class="pre">WhoisLookupError</span></code></a> &#8211;
-The whois RWS lookup failed.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">HTTPLookupError</span></code> &#8211;
+The HTTP lookup failed.</p>
 </td>
 </tr>
 </tbody>
@@ -352,8 +494,8 @@ The whois RWS lookup failed.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="ipwhois.ipwhois.IPWhois.get_whois">
-<code class="descname">get_whois</code><span class="sig-paren">(</span><em>asn_registry='arin'</em>, <em>retry_count=3</em>, <em>server=None</em>, <em>port=43</em>, <em>extra_blacklist=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.get_whois"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.get_whois" title="Permalink to this definition">¶</a></dt>
+<dt id="ipwhois.net.Net.get_whois">
+<code class="descname">get_whois</code><span class="sig-paren">(</span><em>asn_registry='arin'</em>, <em>retry_count=3</em>, <em>server=None</em>, <em>port=43</em>, <em>extra_blacklist=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net.get_whois"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net.get_whois" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function for retrieving whois or rwhois information for an IP
 address via any port. Defaults to port 43 (WHOIS).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -379,10 +521,10 @@ the global BLACKLIST.</li>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference internal" href="#ipwhois.ipwhois.BlacklistError" title="ipwhois.ipwhois.BlacklistError"><code class="xref py py-exc docutils literal"><span class="pre">BlacklistError</span></code></a> &#8211;
+<li><code class="xref py py-exc docutils literal"><span class="pre">BlacklistError</span></code> &#8211;
 Raised if the whois server provided is in the
 global BLACKLIST or extra_blacklist.</li>
-<li><a class="reference internal" href="#ipwhois.ipwhois.WhoisLookupError" title="ipwhois.ipwhois.WhoisLookupError"><code class="xref py py-exc docutils literal"><span class="pre">WhoisLookupError</span></code></a> &#8211;
+<li><code class="xref py py-exc docutils literal"><span class="pre">WhoisLookupError</span></code> &#8211;
 The whois lookup failed.</li>
 </ul>
 </td>
@@ -392,8 +534,150 @@ The whois lookup failed.</li>
 </dd></dl>
 
 <dl class="method">
-<dt id="ipwhois.ipwhois.IPWhois.lookup">
-<code class="descname">lookup</code><span class="sig-paren">(</span><em>inc_raw=False</em>, <em>retry_count=3</em>, <em>get_referral=False</em>, <em>extra_blacklist=None</em>, <em>ignore_referral_errors=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.lookup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.lookup" title="Permalink to this definition">¶</a></dt>
+<dt id="ipwhois.net.Net.lookup_asn">
+<code class="descname">lookup_asn</code><span class="sig-paren">(</span><em>retry_count=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net.lookup_asn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net.lookup_asn" title="Permalink to this definition">¶</a></dt>
+<dd><p>The wrapper function for retrieving and parsing ASN information for an
+IP address.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>retry_count</strong> &#8211; The number of times to retry in case socket errors,
+timeouts, connection resets, etc. are encountered.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Dictionary:</th><td class="field-body">Result from get_asn_dns() or get_asn_whois().</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Dictionary:</th><td class="field-body">The dictionary returned by get_asn_dns() or
+get_asn_whois().</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Tuple</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">ASNRegistryError</span></code> &#8211;
+ASN registry does not match.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-ipwhois.rdap"></span><dl class="class">
+<dt id="ipwhois.rdap.RDAP">
+<em class="property">class </em><code class="descclassname">ipwhois.rdap.</code><code class="descname">RDAP</code><span class="sig-paren">(</span><em>net</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/rdap.html#RDAP"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.rdap.RDAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>The class for parsing IP address whois information via RDAP:
+<a class="reference external" href="https://tools.ietf.org/html/rfc7483">https://tools.ietf.org/html/rfc7483</a>
+<a class="reference external" href="https://www.arin.net/resources/rdap.html">https://www.arin.net/resources/rdap.html</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>net</strong> &#8211; A ipwhois.net.Net object.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">NetError</span></code> &#8211;
+The parameter provided is not an instance of
+ipwhois.net.Net</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">IPDefinedError</span></code> &#8211;
+The address provided is defined (does not need to be
+resolved).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ipwhois.rdap.RDAP.lookup">
+<code class="descname">lookup</code><span class="sig-paren">(</span><em>inc_raw=False</em>, <em>retry_count=3</em>, <em>asn_data=None</em>, <em>depth=0</em>, <em>excluded_entities=None</em>, <em>response=None</em>, <em>bootstrap=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/rdap.html#RDAP.lookup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.rdap.RDAP.lookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function for retrieving and parsing information for an IP
+address via RDAP (HTTP).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inc_raw</strong> &#8211; Boolean for whether to include the raw results in the
+returned dictionary.</li>
+<li><strong>retry_count</strong> &#8211; The number of times to retry in case socket errors,
+timeouts, connection resets, etc. are encountered.</li>
+<li><strong>asn_data</strong> &#8211; Result dictionary from ipwhois.net.Net.lookup_asn().
+May be optional in the future when utilizing RDAP bootstrap.</li>
+<li><strong>depth</strong> &#8211; How many levels deep to run queries when additional
+referenced objects are found.</li>
+<li><strong>excluded_entities</strong> &#8211; A list of entity handles to not perform lookups.</li>
+<li><strong>response</strong> &#8211; Optional response object, this bypasses the RDAP lookup.</li>
+<li><strong>bootstrap</strong> &#8211; If True, performs lookups via ARIN bootstrap rather
+than lookups based on ASN data.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">query:</th><td class="field-body">The IP address (String)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">network:</th><td class="field-body">Dictionary of values returned by _RDAPNetwork. The raw
+result is included for each entity if the inc_raw parameter is
+True.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">entities:</th><td class="field-body">List of entity keys referenced by the top level IP
+address query.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">objects:</th><td class="field-body">Dictionary of objects with the handles as keys, and the
+dictionary returned by _RDAPEntity, etc as the values. The raw
+result is included for each object if the inc_raw parameter is
+True.</td>
+</tr>
+</tbody>
+</table>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-ipwhois.whois"></span><dl class="class">
+<dt id="ipwhois.whois.Whois">
+<em class="property">class </em><code class="descclassname">ipwhois.whois.</code><code class="descname">Whois</code><span class="sig-paren">(</span><em>net</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/whois.html#Whois"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.whois.Whois" title="Permalink to this definition">¶</a></dt>
+<dd><p>The class for parsing via RDAP:
+<a class="reference external" href="https://www.arin.net/resources/rdap.html">https://www.arin.net/resources/rdap.html</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>net</strong> &#8211; A ipwhois.net.Net object.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal"><span class="pre">NetError</span></code> &#8211;
+The parameter provided is not an instance of
+ipwhois.net.Net</li>
+<li><code class="xref py py-exc docutils literal"><span class="pre">IPDefinedError</span></code> &#8211;
+The address provided is defined (does not need to be
+resolved).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ipwhois.whois.Whois.lookup">
+<code class="descname">lookup</code><span class="sig-paren">(</span><em>inc_raw=False</em>, <em>retry_count=3</em>, <em>response=None</em>, <em>get_referral=False</em>, <em>extra_blacklist=None</em>, <em>ignore_referral_errors=False</em>, <em>asn_data=None</em>, <em>field_list=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/whois.html#Whois.lookup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.whois.Whois.lookup" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function for retrieving and parsing whois information for an IP
 address via port 43 (WHOIS).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -401,16 +685,21 @@ address via port 43 (WHOIS).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inc_raw</strong> &#8211; Boolean for whether to include the raw whois results in
-the returned dictionary.</li>
+<li><strong>inc_raw</strong> &#8211; Boolean for whether to include the raw results in the
+returned dictionary.</li>
 <li><strong>retry_count</strong> &#8211; The number of times to retry in case socket errors,
 timeouts, connection resets, etc. are encountered.</li>
+<li><strong>response</strong> &#8211; Optional response object, this bypasses the Whois lookup.</li>
 <li><strong>get_referral</strong> &#8211; Boolean for whether to retrieve referral whois
 information, if available.</li>
 <li><strong>extra_blacklist</strong> &#8211; A list of blacklisted whois servers in addition to
 the global BLACKLIST.</li>
 <li><strong>ignore_referral_errors</strong> &#8211; Boolean for whether to ignore and continue
 when an exception is encountered on referral whois lookups.</li>
+<li><strong>asn_data</strong> &#8211; Optional ASN result object, this bypasses the ASN lookup.</li>
+<li><strong>field_list</strong> &#8211; If provided, a list of fields to parse:
+[&#8216;name&#8217;, &#8216;handle&#8217;, &#8216;description&#8217;, &#8216;country&#8217;, &#8216;state&#8217;, &#8216;city&#8217;,
+&#8216;address&#8217;, &#8216;postal_code&#8217;, &#8216;emails&#8217;, &#8216;created&#8217;, &#8216;updated&#8217;]</li>
 </ul>
 </td>
 </tr>
@@ -456,68 +745,6 @@ is True. (String)</td>
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="ipwhois.ipwhois.IPWhois.lookup_rws">
-<code class="descname">lookup_rws</code><span class="sig-paren">(</span><em>inc_raw=False</em>, <em>retry_count=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois.lookup_rws"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois.lookup_rws" title="Permalink to this definition">¶</a></dt>
-<dd><p>The function for retrieving and parsing whois information for an IP
-address via HTTP (Whois-RWS).</p>
-<p><strong>This should be faster than IPWhois.lookup(), but may not be as
-reliable. AFRINIC does not have a Whois-RWS service yet. We have to
-rely on the Ripe RWS service, which does not contain all of the data
-we need. LACNIC RWS is in beta.</strong></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inc_raw</strong> &#8211; Boolean for whether to include the raw whois results in
-the returned dictionary.</li>
-<li><strong>retry_count</strong> &#8211; The number of times to retry in case socket errors,
-timeouts, connection resets, etc. are encountered.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">query:</th><td class="field-body">The IP address (String)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">asn:</th><td class="field-body">The Autonomous System Number (String)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">asn_date:</th><td class="field-body">The ASN Allocation date (String)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">asn_registry:</th><td class="field-body">The assigned ASN registry (String)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">asn_cidr:</th><td class="field-body">The assigned ASN CIDR (String)</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">asn_country_code:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The assigned ASN country code (String)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">nets:</th><td class="field-body">Dictionaries containing network information which consists
-of the fields listed in the NIC_WHOIS dictionary. (List)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">raw:</th><td class="field-body">(Dictionary) - Whois results in Json format if the
-inc_raw parameter is True.</td>
-</tr>
-</tbody>
-</table>
-</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dictionary</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="exception">
-<dt id="ipwhois.ipwhois.WhoisLookupError">
-<em class="property">exception </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">WhoisLookupError</code><a class="reference internal" href="_modules/ipwhois/ipwhois.html#WhoisLookupError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.WhoisLookupError" title="Permalink to this definition">¶</a></dt>
-<dd><p>An Exception for when the whois lookup failed.</p>
 </dd></dl>
 
 <span class="target" id="module-ipwhois.utils"></span><dl class="function">
@@ -712,7 +939,7 @@ elements ever seen. This was taken from the itertools recipes.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.10.2',
+            VERSION:'0.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
