@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ipwhois &mdash; ipwhois 0.11.1 documentation</title>
+  <title>ipwhois &mdash; ipwhois 0.11.2 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
 
   
-    <link rel="top" title="ipwhois 0.11.1 documentation" href="index.html"/>
-        <link rel="next" title="License" href="LICENSE.html"/>
+    <link rel="top" title="ipwhois 0.11.2 documentation" href="index.html"/>
+        <link rel="next" title="Contributing" href="CONTRIBUTING.html"/>
         <link rel="prev" title="ipwhois" href="index.html"/> 
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.11.1
+                0.11.2
               </div>
             
           
@@ -123,6 +123,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#special-thanks">Special Thanks</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">License</a></li>
@@ -220,7 +223,7 @@ for IPv4 and IPv6 addresses.</p>
 <h3>RDAP (HTTP)<a class="headerlink" href="#rdap-http" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="basic-usage">
 <h4>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
 <span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;74.125.225.229&#39;)</span>
@@ -315,7 +318,7 @@ for IPv4 and IPv6 addresses.</p>
 </div>
 <div class="section" id="use-a-proxy">
 <h4>Use a proxy<a class="headerlink" href="#use-a-proxy" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from urllib import request</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;&gt; from urllib import request</span>
 <span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; handler = request.ProxyHandler({&#39;http&#39;: &#39;http://192.168.0.1:80/&#39;})</span>
 <span class="go">&gt;&gt;&gt;&gt; opener = request.build_opener(handler)</span>
@@ -328,7 +331,7 @@ for IPv4 and IPv6 addresses.</p>
 <h3>Legacy Whois<a class="headerlink" href="#legacy-whois" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id1">
 <h4>Basic usage<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
 <span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;74.125.225.229&#39;)</span>
@@ -366,7 +369,7 @@ for IPv4 and IPv6 addresses.</p>
 </div>
 <div class="section" id="multiple-networks-listed-and-referral-whois">
 <h4>Multiple networks listed and referral whois<a class="headerlink" href="#multiple-networks-listed-and-referral-whois" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
 <span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;38.113.198.252&#39;)</span>
@@ -430,7 +433,7 @@ for IPv4 and IPv6 addresses.</p>
 <h3>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="retrieve-host-information-for-an-ip-address">
 <h4>Retrieve host information for an IP address<a class="headerlink" href="#retrieve-host-information-for-an-ip-address" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
 <span class="go">&gt;&gt;&gt;&gt; obj = IPWhois(&#39;74.125.225.229&#39;)</span>
@@ -443,7 +446,7 @@ for IPv4 and IPv6 addresses.</p>
 </div>
 <div class="section" id="retrieve-the-official-country-name-for-an-iso-3166-1-country-code">
 <h4>Retrieve the official country name for an ISO 3166-1 country code<a class="headerlink" href="#retrieve-the-official-country-name-for-an-iso-3166-1-country-code" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;&gt; from ipwhois import IPWhois</span>
 <span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import get_countries</span>
 
 <span class="go">&gt;&gt;&gt;&gt; countries = get_countries()</span>
@@ -457,7 +460,7 @@ for IPv4 and IPv6 addresses.</p>
 </div>
 <div class="section" id="parse-out-ip-addresses-and-ports-from-text-or-a-file">
 <h4>Parse out IP addresses and ports from text or a file<a class="headerlink" href="#parse-out-ip-addresses-and-ports-from-text-or-a-file" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import unique_addresses</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import unique_addresses</span>
 <span class="go">&gt;&gt;&gt;&gt; from pprint import pprint</span>
 
 <span class="go">&gt;&gt;&gt;&gt; input_data = (</span>
@@ -482,23 +485,23 @@ for IPv4 and IPv6 addresses.</p>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Python 2.6, 2.7:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">dnspython</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">dnspython</span>
 <span class="n">ipaddr</span>
 </pre></div>
 </div>
 <p>Python 3.3+:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">dnspython3</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">dnspython3</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="installing">
 <h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
 <p>Latest version from PyPi:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install --upgrade ipwhois
+<div class="highlight-python"><div class="highlight"><pre><span></span>pip install --upgrade ipwhois
 </pre></div>
 </div>
 <p>Latest version from GitHub:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install -e git+https://github.com/secynic/ipwhois@master#egg=ipwhois
+<div class="highlight-python"><div class="highlight"><pre><span></span>pip install -e git+https://github.com/secynic/ipwhois@master#egg=ipwhois
 </pre></div>
 </div>
 </div>
@@ -518,7 +521,7 @@ RDAP lookup is the recommended method to maximize indexable values.</p>
 <p>For information on raw RDAP responses, please see the RFC:
 <a class="reference external" href="https://tools.ietf.org/html/rfc7483">https://tools.ietf.org/html/rfc7483</a></p>
 <p>Here are the new standard keys for RDAP results:</p>
-<div class="highlight-python"><div class="highlight"><pre>:query: The IP address (String)
+<div class="highlight-python"><div class="highlight"><pre><span></span>:query: The IP address (String)
 :network: Dictionary of values returned by _RDAPNetwork. The raw
         result is included for each entity if the inc_raw parameter is
         True.
@@ -552,7 +555,7 @@ recognize this and the returned result will have the values separated by &#8216;
 available as a free export from iso.org. Support has been added for
 iso_3166-1.csv, which is now the default.</p>
 <p>Use Legacy XML File:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import get_countries</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;&gt; from ipwhois.utils import get_countries</span>
 <span class="go">&gt;&gt;&gt;&gt; countries = get_countries(is_legacy_xml=True)</span>
 </pre></div>
 </div>
@@ -582,7 +585,7 @@ domain support.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="LICENSE.html" class="btn btn-neutral float-right" title="License" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="CONTRIBUTING.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="ipwhois" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -594,7 +597,7 @@ domain support.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015, Philip Hane.
+        &copy; Copyright 2016, Philip Hane.
 
     </p>
   </div>
@@ -616,7 +619,7 @@ domain support.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.11.1',
+            VERSION:'0.11.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

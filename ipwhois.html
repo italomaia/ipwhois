@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Library Structure &mdash; ipwhois 0.11.1 documentation</title>
+  <title>Library Structure &mdash; ipwhois 0.11.2 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="ipwhois 0.11.1 documentation" href="index.html"/> 
+    <link rel="top" title="ipwhois 0.11.2 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -58,7 +58,7 @@
             
             
               <div class="version">
-                0.11.1
+                0.11.2
               </div>
             
           
@@ -81,6 +81,9 @@
             
                 <ul>
 <li class="toctree-l1"><a class="reference internal" href="README.html">Readme</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">License</a></li>
@@ -136,7 +139,7 @@
 <span id="library-structure"></span><h1>Library Structure<a class="headerlink" href="#module-ipwhois" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-ipwhois.ipwhois"></span><dl class="class">
 <dt id="ipwhois.ipwhois.IPWhois">
-<em class="property">class </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">IPWhois</code><span class="sig-paren">(</span><em>address</em>, <em>timeout=5</em>, <em>proxy_opener=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ipwhois.ipwhois.</code><code class="descname">IPWhois</code><span class="sig-paren">(</span><em>address</em>, <em>timeout=5</em>, <em>proxy_opener=None</em>, <em>allow_permutations=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/ipwhois.html#IPWhois"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.ipwhois.IPWhois" title="Permalink to this definition">¶</a></dt>
 <dd><p>The wrapper class for performing whois/RDAP lookups and parsing for
 IPv4 and IPv6 addresses.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -149,6 +152,8 @@ IPv6Address.</li>
 <li><strong>timeout</strong> &#8211; The default timeout for socket connections in seconds.</li>
 <li><strong>proxy_opener</strong> &#8211; The urllib.request.OpenerDirector request for proxy
 support or None.</li>
+<li><strong>allow_permutations</strong> &#8211; allow net.Net() to use additional methods if DNS
+lookups to Cymru fail.</li>
 </ul>
 </td>
 </tr>
@@ -293,7 +298,7 @@ parameter is True.</td>
 
 <span class="target" id="module-ipwhois.net"></span><dl class="class">
 <dt id="ipwhois.net.Net">
-<em class="property">class </em><code class="descclassname">ipwhois.net.</code><code class="descname">Net</code><span class="sig-paren">(</span><em>address</em>, <em>timeout=5</em>, <em>proxy_opener=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ipwhois.net.</code><code class="descname">Net</code><span class="sig-paren">(</span><em>address</em>, <em>timeout=5</em>, <em>proxy_opener=None</em>, <em>allow_permutations=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ipwhois/net.html#Net"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ipwhois.net.Net" title="Permalink to this definition">¶</a></dt>
 <dd><p>The class for performing network queries.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -304,6 +309,8 @@ parameter is True.</td>
 <li><strong>timeout</strong> &#8211; The default timeout for socket connections in seconds.</li>
 <li><strong>proxy_opener</strong> &#8211; The urllib.request.OpenerDirector request for proxy
 support or None.</li>
+<li><strong>allow_permutations</strong> &#8211; Use additional methods if DNS lookups to Cymru
+fail.</li>
 </ul>
 </td>
 </tr>
@@ -973,7 +980,7 @@ ipwhois.net.Net.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015, Philip Hane.
+        &copy; Copyright 2016, Philip Hane.
 
     </p>
   </div>
@@ -995,7 +1002,7 @@ ipwhois.net.Net.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.11.1',
+            VERSION:'0.11.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
